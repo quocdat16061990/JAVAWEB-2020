@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.repository.JDBC.BuildingModel;
+package com.laptrinhjavaweb.repository.JDBCModel;
 
 public class BuildingModel {
     private Long id;
@@ -7,9 +7,13 @@ public class BuildingModel {
     private String ward;
     private String district;
     private int numberofbasement;
-    private String floorarea;
-    private String rentprice;
-    private String rentdescription;
+    private int floorarea;
+
+
+
+    private int rentprice;
+
+    private int rentdescription;
     private String type;
 
     public Long getId() {
@@ -60,29 +64,30 @@ public class BuildingModel {
         this.numberofbasement = numberofbasement;
     }
 
-    public String getFloorarea() {
+    public int getFloorarea() {
         return floorarea;
     }
 
-    public void setFloorarea(String floorarea) {
+    public void setFloorarea(int floorarea) {
         this.floorarea = floorarea;
     }
 
-    public String getRentprice() {
+    public int getRentprice() {
         return rentprice;
     }
 
-    public void setRentprice(String rentprice) {
+    public void setRentprice(int rentprice) {
         this.rentprice = rentprice;
     }
 
-    public String getRentdescription() {
+    public int getRentdescription() {
         return rentdescription;
     }
 
-    public void setRentdescription(String rentdescription) {
+    public void setRentdescription(int rentdescription) {
         this.rentdescription = rentdescription;
     }
+
 
     public String getType() {
         return type;

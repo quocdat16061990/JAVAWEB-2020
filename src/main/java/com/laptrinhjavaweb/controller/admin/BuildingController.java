@@ -3,6 +3,7 @@ package com.laptrinhjavaweb.controller.admin;
 import com.laptrinhjavaweb.dto.SearchBuildingDTO;
 import com.laptrinhjavaweb.repository.JDBC.DAO.IBuildingDAO;
 
+import com.laptrinhjavaweb.service.ICustomerService;
 import com.laptrinhjavaweb.service.IUserService;
 
 import com.laptrinhjavaweb.service.IBuildingService;
@@ -21,12 +22,17 @@ public class BuildingController {
     private IBuildingService buildingService;
     @Autowired
     private IUserService userService;
+    @Autowired
+    private ICustomerService customerService;
 
     @RequestMapping(value = "/admin/building-list", method = RequestMethod.GET)
     public ModelAndView buildingList(@ModelAttribute("modelSearch") SearchBuildingDTO searchBuildingDTO) {
         ModelAndView mav = new ModelAndView("admin/building/list");
         mav.addObject("buildingSearch",buildingService.findByConditon());
-//        mav.addObject("modelSearch", searchBuildingDTO);
+        mav.addObject("addBuilding",buildingService.addBuilding());
+        mav.addObject("modelSearch", searchBuildingDTO);
+        mav.addObject("addCustomer",customerService.addCustomer());
+        mav.addObject("findCustomer",customerService.findCustomer());
         return mav;
     }
 

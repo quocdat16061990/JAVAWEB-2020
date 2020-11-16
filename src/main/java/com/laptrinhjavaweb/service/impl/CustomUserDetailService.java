@@ -3,6 +3,10 @@ package com.laptrinhjavaweb.service.impl;
 import com.laptrinhjavaweb.dto.MyUserDetail;
 import com.laptrinhjavaweb.dto.RoleDTO;
 import com.laptrinhjavaweb.dto.UserDTO;
+import com.laptrinhjavaweb.repository.JDBC.DAO.ICustomerDAO;
+import com.laptrinhjavaweb.repository.JDBCModel.BuildingModel;
+import com.laptrinhjavaweb.repository.JDBCModel.CustomerModel;
+import com.laptrinhjavaweb.service.ICustomerService;
 import com.laptrinhjavaweb.service.IUserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +21,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CustomUserDetailService implements UserDetailsService {
+public class CustomUserDetailService implements UserDetailsService,ICustomerService
+
+    {
 
     @Autowired
     private IUserService userService;
+    private ICustomerDAO customerDAO;
 
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
@@ -36,4 +43,14 @@ public class CustomUserDetailService implements UserDetailsService {
         BeanUtils.copyProperties(userDTO, myUserDetail);
         return myUserDetail;
     }
-}
+
+        @Override
+        public List<CustomerModel> findCustomer() {
+            return customerDAO.findCustomer();
+        }
+
+        @Override
+        public List<CustomerModel> addCustomer() {
+            return customerDAO.addCustomer();
+        }
+    }
