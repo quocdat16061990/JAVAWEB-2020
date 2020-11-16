@@ -7,7 +7,7 @@ import com.laptrinhjavaweb.repository.BuildingRepository;
 import com.laptrinhjavaweb.repository.JDBC.DAO.IBuildingDAO;
 import com.laptrinhjavaweb.repository.JDBC.DAO.impl.BuildingDAO;
 import com.laptrinhjavaweb.service.IBuildingService;
-import  com.laptrinhjavaweb.repository.JDBC.BuildingModel.BuildingModel;
+import com.laptrinhjavaweb.repository.JDBCModel.BuildingModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,7 +50,10 @@ public class BuildingService implements IBuildingService {
     public List<BuildingModel> findByConditon() {
         return buildingDAO.findByCondition();
     }
-
+    @Override
+    public List<BuildingModel> addBuilding(){
+        return buildingDAO.addBuilding();
+    }
     @Override
     @Transactional
     public void save(BuildingDTO buildingDTO) {

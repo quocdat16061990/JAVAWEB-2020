@@ -1,5 +1,5 @@
 package com.laptrinhjavaweb.repository.JDBC.DAO.impl;
-import com.laptrinhjavaweb.repository.JDBC.BuildingModel.BuildingModel;
+import com.laptrinhjavaweb.repository.JDBCModel.BuildingModel;
 import com.laptrinhjavaweb.repository.JDBC.DAO.IBuildingDAO;
 
 import java.sql.Connection;
@@ -52,6 +52,52 @@ public class BuildingDAO implements IBuildingDAO {
                     buildingModel.setDistrict(rs.getString("district"));
                     buildingModel.setNumberofbasement(rs.getInt("numberofbasement"));
                     buildingModel.setType(rs.getString("type"));
+                    results.add(buildingModel);
+                }
+                return results;
+
+            }catch(SQLException e) {
+                return null;
+            }
+            finally {
+                try {
+                    if(conn!= null) {
+                        conn.close();
+                    }
+                    if(statement!= null) {
+                        statement.close();
+                    }
+                    if(rs!= null) {
+                        rs.close();
+                    }
+                }catch(SQLException e) {
+                    return null;
+                }
+            }
+        }
+        return null;
+    }
+    public List<BuildingModel> addBuilding(){
+
+        List<BuildingModel> results=new ArrayList<>();
+        String sql = "INSERT INTO building (name,ward,street,district,numberofbasement,floorarea,rentprice,rentdescription) VALUES (?,?,?,?,?,?,?,?)";
+        Connection conn= getConnection();
+        PreparedStatement statement=null;
+        ResultSet rs=null;
+        if(conn!=null) {
+            try {
+                statement=conn.prepareStatement(sql);
+                rs=statement.executeQuery();
+                while(rs.next()) {
+                    BuildingModel buildingModel=new BuildingModel();
+                    buildingModel.setName(rs.getString("name"));
+                    buildingModel.setWard(rs.getString("ward"));
+                    buildingModel.setStreet(rs.getString("street"));
+                    buildingModel.setDistrict(rs.getString("district"));
+                    buildingModel.setNumberofbasement(rs.getInt("numberofbasement"));
+                    buildingModel.setFloorarea(rs.getInt("floorarea"));
+                    buildingModel.setRentprice(rs.getInt("rentprice"));
+                    buildingModel.setRentdescription(rs.getInt("rentdescription"));
                     results.add(buildingModel);
                 }
                 return results;
