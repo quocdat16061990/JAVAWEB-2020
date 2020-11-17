@@ -18,8 +18,8 @@ public class SearchBuildingDTO {
     private Integer costRentTo;
     private String managerName;
     private String managerPhone;
-    private long staffId;
-    private String buildingTypes;
+    private Long staffId;
+    private String[] buildingTypes;
 
 
 
@@ -140,11 +140,11 @@ public class SearchBuildingDTO {
         this.managerPhone = managerPhone;
     }
 
-    public long getStaffId() {
+    public Long getStaffId() {
         return staffId;
     }
 
-    public void setStaffId(long staffId) {
+    public void setStaffId(Long staffId) {
         this.staffId = staffId;
     }
 
@@ -155,11 +155,12 @@ public class SearchBuildingDTO {
     public void setRentType(List<String> rentType) {
         this.rentType = rentType;
     }
-    public String getBuildingTypes() {
+
+    public String[] getBuildingTypes() {
         return buildingTypes;
     }
 
-    public void setBuildingTypes(String buildingTypes) {
+    public void setBuildingTypes(String[] buildingTypes) {
         this.buildingTypes = buildingTypes;
     }
 }

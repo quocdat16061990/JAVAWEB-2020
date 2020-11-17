@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.service.impl;
 
 import com.laptrinhjavaweb.converter.BuildingConverter;
 import com.laptrinhjavaweb.dto.BuildingDTO;
+import com.laptrinhjavaweb.dto.SearchBuildingDTO;
 import com.laptrinhjavaweb.entity.BuildingEntity;
 import com.laptrinhjavaweb.repository.BuildingRepository;
 import com.laptrinhjavaweb.repository.JDBC.DAO.IBuildingDAO;
@@ -47,8 +48,8 @@ public class BuildingService implements IBuildingService {
     }
 
     @Override
-    public List<BuildingModel> findByConditon() {
-        return buildingDAO.findByCondition();
+    public List<BuildingDTO> findByConditon(SearchBuildingDTO searchBuildingDTO) {
+        return buildingDAO.findByCondition(searchBuildingDTO);
     }
     @Override
     public List<BuildingModel> addBuilding(){

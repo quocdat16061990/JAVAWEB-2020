@@ -8,13 +8,6 @@ public class BuildingDTO {
     private String street;
     private String ward;
     private String district;
-
-
-
-
-
-
-
     private String structure;
     private Integer numberOfBasement;
     private Integer floorArea;
@@ -39,6 +32,7 @@ public class BuildingDTO {
     private String image;
     private String managerName;
     private String managerPhone;
+    private Long staffId;
 
 
 
@@ -280,5 +274,11 @@ public class BuildingDTO {
         this.managerPhone = managerPhone;
     }
 
+    public Long getStaffId() {
+        return staffId;
+    }
 
+    public void setStaffId(Long staffId) {
+        this.staffId = staffId;
+    }
 }

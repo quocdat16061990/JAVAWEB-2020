@@ -60,7 +60,7 @@
 
                                                     <form:select path="district" id="district" name="district" >
 
-                                                        <form:option value="-1" label="---- Chọn Quận"/>
+                                                        <form:option value="" label="---- Chọn Quận"/>
                                                             <form:options items="${districts}"/>
 
 
@@ -153,7 +153,7 @@
                                                 <div>
                                                     <label for="name">Chọn nhân viên phụ trách</label>
                                                     <select class="form-control" id="staffId" class="form-control" name="staffId">
-                                                        <option>---Chọn nhân viên phụ trách---</option>
+                                                        <option value="">---Chọn nhân viên phụ trách---</option>
                                                         <option>2</option>
                                                         <option>3</option>
                                                     </select>
@@ -165,17 +165,11 @@
 
                                             <form:label path="buildingTypes" />
                                                <form:input path="buildingTypes"  items="${buildingTypes}"/>
-                                                <%--<label class="checkbox-inline">--%>
-                                                    <%--<input type="checkbox" items=${buildingTypes}"TANG_TRET" id="buildingTypes" name="buildingTypes">Tầng Trệt</label>--%>
-                                                <%--<label class="checkbox-inline">--%>
-                                                    <%--<input type="checkbox" value="NGUYEN_CAN" id="buildingTypes" name="buildingTypes">Nguyên Căn</label>--%>
-                                                <%--<label class="checkbox-inline">--%>
-                                                    <%--<input type="checkbox" value="NOI_THAT" id="buildingTypes" name="buildingTypes">Nội Thất</label>--%>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-9">
-                                                <button  type="submit" class="btn btn-success"id="btnSearch" >{buildingSearch}</button>
+                                                <button  type="submit" class="btn btn-success"id="btnSearch" >SEARCH</button>
                                             </div>
                                         </div>
                                     </div><!-- PAGE CONTENT ENDS -->
@@ -213,7 +207,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="item" items="${buildings}">
+                        <c:forEach var="item" items="${buildingSearch}">
                         <tr>
                             <th><label><input type="checkbox" value="1" id="checkbox"></label></th>
                             <td>${item.name}</td>

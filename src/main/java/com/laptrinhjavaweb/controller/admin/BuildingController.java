@@ -28,11 +28,13 @@ public class BuildingController {
     @RequestMapping(value = "/admin/building-list", method = RequestMethod.GET)
     public ModelAndView buildingList(@ModelAttribute("modelSearch") SearchBuildingDTO searchBuildingDTO) {
         ModelAndView mav = new ModelAndView("admin/building/list");
-        mav.addObject("buildingSearch",buildingService.findByConditon());
-        mav.addObject("addBuilding",buildingService.addBuilding());
+
         mav.addObject("modelSearch", searchBuildingDTO);
-        mav.addObject("addCustomer",customerService.addCustomer());
-        mav.addObject("findCustomer",customerService.findCustomer());
+        mav.addObject("buildingSearch",buildingService.findByConditon(searchBuildingDTO));
+//        mav.addObject("addBuilding",buildingService.addBuilding());
+
+//        mav.addObject("addCustomer",customerService.addCustomer());
+//        mav.addObject("findCustomer",customerService.findCustomer());
         return mav;
     }
 
