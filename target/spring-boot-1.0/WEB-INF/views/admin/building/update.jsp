@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/common/taglib.jsp"%>
-<c:url var="buildingAPI" value="/api/building" />
+<c:url var="buildingUpdateURL" value="/admin/building-update" />
 <html>
 <head>
-    <title>Building Edit</title>
+    <title>Building Update</title>
 </head>
 <body>
 <div class="main-content">
@@ -23,7 +23,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
-                    <form:form commandName="addBuilding" class="form-horizontal" role="form" id="formEdit">
+
+                    <form:form commandName="updateBuilding" action="buildingUpdateURL" class="form-horizontal" role="form" id="formEdit">
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="name"> Tên toà nhà </label>
 
@@ -238,7 +239,51 @@
             </button>
         </div>
 
+        <table id="buildingList" class="table  table-bordered table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Tên toà nhà</th>
+                <th>Địa chỉ</th>
+                <th>Tên quản lý</th>
+                <th>Số điện thoại</th>
+                <th>Diện tích sàn</th>
+                <th>Số tầng hầm</th>
+                <th>Giá thuê</th>
+                <th>Phí dịch vụ</th>
+                <th>Thao tác</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="item" items="${editBuilding}">
+                <tr>
+                    <th><label><input type="checkbox" value="1" id="checkbox"></label></th>
+                    <td>${item.name}</td>
+                    <td>${item.street}, ${item.ward}, ${item.district} </td>
+                    <td>${item.managerName}</td>
+                    <td>${item.managerPhone}</td>
+                    <td>${item.floorArea}</td>
+                    <td>${item.numberOfBasement}</td>
+                    <td>${item.rentPrice}</td>
+                    <td>${item.serviceFee}</td>
+                    <td>
+                        <div class="hidden-sm hidden-xs action-buttons">
+                            <a class ="blue" data-toggle="tooltip" data-placement="top" title="Giao toà nhà" onclick="assignmentBuilding(1)">
+                                <i class="ace-icon fa fa-exchange bigger-130" ></i>
+                            </a>
+                            <a class="green" href="#">
+                                <i class="ace-icon fa fa-pencil bigger-130"></i>
+                            </a>
 
+                            <a class="red" href="#">
+                                <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
     </div>
 </div><!-- /.main-content -->
 

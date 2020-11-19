@@ -44,7 +44,6 @@
                                             <div class="col-sm-6">
                                                 <div>
                                                     <label for="name">Tên toà nhà</label>
-<%--                                                    <input type="text" id="name" class="form-control" value="${modelSeach.name}"/>--%>
                                                     <form:input path="name" cssClass="form-control" />
                                                 </div>
                                             </div>
@@ -57,29 +56,21 @@
                                         </div><!-- /.form-group-->
                                         <div class="form-group">
                                             <div class="col-sm-4">
-
-                                                    <form:select path="district" id="district" name="district" >
-
-                                                        <form:option value="-1" label="---- Chọn Quận"/>
-                                                            <form:options items="${districts}"/>
-
-
-
-
-                                                    </form:select>
-
+                                                <label for="name">Quận</label>
+                                                <form:select path="district" class="form-control">
+                                                    <form:option value="" label="--- Chọn quận ---"/>
+                                                    <form:options items="${district}"/>
+                                                </form:select>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div>
                                                     <label for="name">Phường</label>
-<%--                                                    <input type="text" id="ward" class="form-control" />--%>
                                                     <form:input path="ward" cssClass="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div>
                                                     <label for="name">Đường</label>
-<%--                                                    <input type="text" id="street" class="form-control" />--%>
                                                     <form:input path="street" cssClass="form-control" />
                                                 </div>
                                             </div>
@@ -95,7 +86,7 @@
                                             <div class="col-sm-4">
                                                 <div>
                                                     <label for="name">Hướng</label>
-<%--                                                    <input type="text" id="ward" class="form-control" />--%>
+                                                        <%--                                                    <input type="text" id="ward" class="form-control" />--%>
                                                     <form:input path="direction" cssClass="form-control" />
                                                 </div>
                                             </div>
@@ -138,44 +129,33 @@
                                             <div class="col-sm-4">
                                                 <div>
                                                     <label for="name">Tên quản lý</label>
-<%--                                                    <input type="text" id="managerName" class="form-control" />--%>
+                                                        <%--                                                    <input type="text" id="managerName" class="form-control" />--%>
                                                     <form:input path="managerName" cssClass="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div>
                                                     <label for="name">Điện thoại quản lý</label>
-<%--                                                    <input type="text" id="managerPhone" class="form-control" />--%>
+                                                        <%--                                                    <input type="text" id="managerPhone" class="form-control" />--%>
                                                     <form:input path="managerPhone" cssClass="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
-                                                <div>
-                                                    <label for="name">Chọn nhân viên phụ trách</label>
-                                                    <select class="form-control" id="staffId" class="form-control" name="staffId">
-                                                        <option>---Chọn nhân viên phụ trách---</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </select>
-                                                </div>
+                                                <label for="name">Chọn nhân viên phụ trách</label>
+                                                <form:select path="staffId" class="form-control">
+                                                    <form:option value="" label="--- Chọn nhân viên ---"/>
+                                                    <form:options items="${staffmaps}"/>
+                                                </form:select>
                                             </div>
                                         </div><!-- /.form-group-->
                                         <div class="form-group">
                                             <div class="col-sm-4">
-
-                                            <form:label path="buildingTypes" />
-                                               <form:input path="buildingTypes"  items="${buildingTypes}"/>
-                                                <%--<label class="checkbox-inline">--%>
-                                                    <%--<input type="checkbox" items=${buildingTypes}"TANG_TRET" id="buildingTypes" name="buildingTypes">Tầng Trệt</label>--%>
-                                                <%--<label class="checkbox-inline">--%>
-                                                    <%--<input type="checkbox" value="NGUYEN_CAN" id="buildingTypes" name="buildingTypes">Nguyên Căn</label>--%>
-                                                <%--<label class="checkbox-inline">--%>
-                                                    <%--<input type="checkbox" value="NOI_THAT" id="buildingTypes" name="buildingTypes">Nội Thất</label>--%>
+                                                <form:checkboxes path="buildingTypes" items="${buildingTypes}"/>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-9">
-                                                <button  type="submit" class="btn btn-success"id="btnSearch" >{buildingSearch}</button>
+                                                <button type="button" class="btn btn-success"id="btnSearch" path="">Tìm kiếm</button>
                                             </div>
                                         </div>
                                     </div><!-- PAGE CONTENT ENDS -->
@@ -213,32 +193,32 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="item" items="${buildings}">
-                        <tr>
-                            <th><label><input type="checkbox" value="1" id="checkbox"></label></th>
-                            <td>${item.name}</td>
-                            <td>${item.street}, ${item.ward}</td>
-                            <td>${item.managerName}</td>
-                            <td>${item.managerPhone}</td>
-                            <td>${item.floorArea}</td>
-                            <td>${item.numberOfBasement}</td>
-                            <td>${item.rentPrice}</td>
-                            <td>${item.serviceFee}</td>
-                            <td>
-                                <div class="hidden-sm hidden-xs action-buttons">
-                                    <a class ="blue" data-toggle="tooltip" data-placement="top" title="Giao toà nhà" onclick="assignmentBuilding(1)">
-                                        <i class="ace-icon fa fa-exchange bigger-130" ></i>
-                                    </a>
-                                    <a class="green" href="#">
-                                        <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                    </a>
+                        <c:forEach var="item" items="${buildingSearch}">
+                            <tr>
+                                <th><label><input type="checkbox" value="1" id="checkbox"></label></th>
+                                <td>${item.name}</td>
+                                <td>${item.street}, ${item.ward}, ${item.district} </td>
+                                <td>${item.managerName}</td>
+                                <td>${item.managerPhone}</td>
+                                <td>${item.floorArea}</td>
+                                <td>${item.numberOfBasement}</td>
+                                <td>${item.rentPrice}</td>
+                                <td>${item.serviceFee}</td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs action-buttons">
+                                        <a class ="blue" data-toggle="tooltip" data-placement="top" title="Giao toà nhà" onclick="assignmentBuilding(1)">
+                                            <i class="ace-icon fa fa-exchange bigger-130" ></i>
+                                        </a>
+                                        <a class="green" href="#">
+                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                        </a>
 
-                                    <a class="red" href="#">
-                                        <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
+                                        <a class="red" href="#">
+                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
                         </c:forEach>
                         </tbody>
                     </table>
