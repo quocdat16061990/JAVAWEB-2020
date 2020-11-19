@@ -8,12 +8,13 @@ public class BuildingDTO {
     private String street;
     private String ward;
     private String district;
-    private String structure;
-    private Integer numberOfBasement;
-    private Integer floorArea;
+   private String structure;
+    private int numberOfBasement;
+    private int floorArea;
+    private int rentArea;
     private String direction;
     private String level;
-    private Integer rentPrice;
+    private int rentPrice;
     private String rentPriceDescription;
     private String serviceFee;
     private String carFee;
@@ -32,7 +33,8 @@ public class BuildingDTO {
     private String image;
     private String managerName;
     private String managerPhone;
-    private Long staffId;
+    private String[] typeArrays;
+
 
 
 
@@ -90,19 +92,19 @@ public class BuildingDTO {
         this.structure = structure;
     }
 
-    public Integer getNumberOfBasement() {
+    public int getNumberOfBasement() {
         return numberOfBasement;
     }
 
-    public void setNumberOfBasement(Integer numberOfBasement) {
+    public void setNumberOfBasement(int numberOfBasement) {
         this.numberOfBasement = numberOfBasement;
     }
 
-    public Integer getFloorArea() {
+    public int getFloorArea() {
         return floorArea;
     }
 
-    public void setFloorArea(Integer floorArea) {
+    public void setFloorArea(int floorArea) {
         this.floorArea = floorArea;
     }
 
@@ -122,11 +124,11 @@ public class BuildingDTO {
         this.level = level;
     }
 
-    public Integer getRentPrice() {
+    public int getRentPrice() {
         return rentPrice;
     }
 
-    public void setRentPrice(Integer rentPrice) {
+    public void setRentPrice(int rentPrice) {
         this.rentPrice = rentPrice;
     }
 
@@ -274,11 +276,19 @@ public class BuildingDTO {
         this.managerPhone = managerPhone;
     }
 
-    public Long getStaffId() {
-        return staffId;
+    public String[] getTypeArrays() {
+        return typeArrays;
     }
 
-    public void setStaffId(Long staffId) {
-        this.staffId = staffId;
+    public void setTypeArrays(String[] typeArrays) {
+        this.typeArrays = typeArrays;
+    }
+
+    public int getRentArea() {
+        return rentArea;
+    }
+
+    public void setRentArea(int rentArea) {
+        this.rentArea = rentArea;
     }
 }

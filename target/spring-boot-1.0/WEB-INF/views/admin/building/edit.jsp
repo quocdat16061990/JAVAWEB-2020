@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/common/taglib.jsp"%>
 <c:url var="buildingAPI" value="/api/building" />
 <html>
 <head>
@@ -22,7 +23,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
-                    <form class="form-horizontal" role="form" id="formEdit">
+                    <form:form commandName="addBuilding" class="form-horizontal" role="form" id="formEdit">
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="name"> Tên toà nhà </label>
 
@@ -30,18 +31,22 @@
                                 <input type="text" id="name" name="name" value="" class="form-control" />
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label" for="staffId"> Người quản lý sản phẩm </label>
-
+                        <%--<div class="form-group">
+                            <label class="col-sm-3 control-label"> Người quản lý sản phẩm </label>
                             <div class="col-sm-9">
-                                <input type="text" id="staffId" name="staffId" class="form-control" />
+                                <form:select path="staffId" class="form-control">
+                                    <form:option value="" label="--- Chọn nhân viên ---"/>
+                                    <form:options items="${staffmaps}"/>
+                                </form:select>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label" for="dictrict"> Quận </label>
-
+                            <label class="col-sm-3 control-label"> Quận </label>
                             <div class="col-sm-9">
-                                <input type="text" id="dictrict" name="dictrict" class="form-control" />
+                                <form:select path="district" class="form-control">
+                                    <form:option value="" label="--- Chọn quận ---"/>
+                                    <form:options items="${district}"/>
+                                </form:select>
                             </div>
                         </div>
                         <div class="form-group">
@@ -198,17 +203,16 @@
                                 <input type="text" id="brokerageFee" name="brokerageFee" class="form-control" />
                             </div>
                         </div>
-<%--                        <div class="form-group">--%>
-<%--                            <label class="col-sm-3 control-label"> Loại toà nhà </label>--%>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"> Loại toà nhà </label>
 
-<%--                            <div class="col-sm-9">--%>
-<%--                                <label class="checkbox-inline"><input type="checkbox" value="TANG_TRET" id="buildingTypes" name="buildingTypes">Tầng Trệt</label>--%>
-<%--                                <label class="checkbox-inline"><input type="checkbox" value="NGUYEN_CAN" id="buildingTypes" name="buildingTypes">Nguyên Căn</label>--%>
-<%--                                <label class="checkbox-inline"><input type="checkbox" value="NOI_THAT" id="buildingTypes" name="buildingTypes">Nội Thất</label>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-
-                    </form>
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <form:checkboxes path="typeArrays" items="${buildingTypes}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form:form>
                     <div class="form-group">
                         <label class="col-sm-3 control-label"></label>
                         <div class="col-sm-9">
@@ -220,6 +224,21 @@
                 </div>
             </div>
         </div>
+        <div class="hr hr-18 dotted hr-double"></div>
+        <div class="pull-right">
+            <button class="bigger-150" data-toggle="tooltip" data-placement="top" title="Thêm toà nhà">
+                <a class="green" href="<c:url value='/admin/building-edit'/>">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                </a>
+            </button>
+            <button class="bigger-150" data-toggle="tooltip" data-placement="top" id="btnDeleteBuilding" title="Xoá toà nhà">
+                <a class="red">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </a>
+            </button>
+        </div>
+
+      
     </div>
 </div><!-- /.main-content -->
 
@@ -232,7 +251,7 @@
         $.each(formData, function (index, v) {
             data[""+v.name+""] = v.value;
         });
-        // data['buildingTypes'] = buildingTypes;
+        data['buildingTypes'] = buildingTypes;
         $.ajax({
             type: 'POST',
             url: '${buildingAPI}',
@@ -241,7 +260,7 @@
             contentType: "application/json",
             success: function (response) {
                 console.log('Success')
-                    console.log(response)
+                console.log(response)
             },
             error: function (response) {
                 console.log('Failed'),

@@ -19,7 +19,7 @@ public class SearchBuildingDTO {
     private String managerName;
     private String managerPhone;
     private Long staffId;
-    private String[] buildingTypes;
+    private String [] buildingTypes;
 
 
 
@@ -155,12 +155,11 @@ public class SearchBuildingDTO {
     public void setRentType(List<String> rentType) {
         this.rentType = rentType;
     }
-
-    public String[] getBuildingTypes() {
+    public String [] getBuildingTypes() {
         return buildingTypes;
     }
 
-    public void setBuildingTypes(String[] buildingTypes) {
+    public void setBuildingTypes(String [] buildingTypes) {
         this.buildingTypes = buildingTypes;
     }
 }

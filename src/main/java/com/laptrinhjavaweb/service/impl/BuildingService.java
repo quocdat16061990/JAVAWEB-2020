@@ -5,10 +5,9 @@ import com.laptrinhjavaweb.dto.BuildingDTO;
 import com.laptrinhjavaweb.dto.SearchBuildingDTO;
 import com.laptrinhjavaweb.entity.BuildingEntity;
 import com.laptrinhjavaweb.repository.BuildingRepository;
-import com.laptrinhjavaweb.repository.JDBC.DAO.IBuildingDAO;
-import com.laptrinhjavaweb.repository.JDBC.DAO.impl.BuildingDAO;
+import com.laptrinhjavaweb.repository.jdbc.IBuildingJDBC;
+import com.laptrinhjavaweb.repository.jdbc.impl.BuildingJDBC;
 import com.laptrinhjavaweb.service.IBuildingService;
-import com.laptrinhjavaweb.repository.JDBCModel.BuildingModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +24,7 @@ import java.util.Map;
 public class BuildingService implements IBuildingService {
 
 
+    private IBuildingJDBC iBuildingJDBC=new BuildingJDBC();
 
     @Autowired
     private BuildingRepository buildingRepository;
@@ -32,10 +32,6 @@ public class BuildingService implements IBuildingService {
     @Autowired
     private BuildingConverter buildingConverter;
 
-    private IBuildingDAO buildingDAO;
-    public BuildingService(){
-        buildingDAO=new BuildingDAO();
-    }
     @Override
     public List<BuildingDTO> findAll() {
         List<BuildingDTO> result = new ArrayList<>();
@@ -47,14 +43,6 @@ public class BuildingService implements IBuildingService {
         return result;
     }
 
-    @Override
-    public List<BuildingDTO> findByConditon(SearchBuildingDTO searchBuildingDTO) {
-        return buildingDAO.findByCondition(searchBuildingDTO);
-    }
-    @Override
-    public List<BuildingModel> addBuilding(){
-        return buildingDAO.addBuilding();
-    }
     @Override
     @Transactional
     public void save(BuildingDTO buildingDTO) {
@@ -79,4 +67,22 @@ public class BuildingService implements IBuildingService {
         }
         return results;
     }
+
+    @Override
+    public List<BuildingDTO> searchBuilding(SearchBuildingDTO searchBuildingDTO) {
+         List<BuildingDTO> result=iBuildingJDBC.search(searchBuildingDTO);
+        return result;
+    }
+    @Override
+    public List<BuildingDTO> editBuilding(BuildingDTO buildingDTO){
+        List<BuildingDTO> result=iBuildingJDBC.editBuilding(buildingDTO);
+        return result;
+    }
+    @Override
+    @Transactional
+    public void   addBuilding(BuildingDTO buildingDTO) {
+         iBuildingJDBC.addBuilding(buildingDTO);
+
+    }
+
 }
