@@ -5,6 +5,7 @@ import com.laptrinhjavaweb.dto.CustomerDTO;
 import com.laptrinhjavaweb.repository.jdbc.ICustomerJDBC;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerJDBC implements ICustomerJDBC {
@@ -24,7 +25,8 @@ public class CustomerJDBC implements ICustomerJDBC {
 
 
     @Override
-    public List<CustomerDTO> searchCustomer(CustomerDTO customerDTO) {
+    public List<CustomerDTO> searchCustomer(CustomerDTO search) {
+        List<CustomerDTO> result = new ArrayList<>();
         String sql= "SELECT * FROM customer as c;";
         Connection conn=getConnection();
         PreparedStatement statement=null;
@@ -32,12 +34,33 @@ public class CustomerJDBC implements ICustomerJDBC {
         if(conn !=null){
             try {
                 statement=conn.prepareStatement(sql);
-                customerDTO.setFullname(rs.getString("fullname"));
-                customerDTO.setPhone(rs.getString("phonne"));
-                customerDTO.setEmail(rs.getString("email"));
+                rs=statement.executeQuery();
+                while (rs.next()){
+                    CustomerDTO customerDTO=new CustomerDTO();
+                    customerDTO.setName(rs.getString("name"));
+                    customerDTO.setPhone(rs.getString("phone"));
+                    customerDTO.setEmail(rs.getString("email"));
+                    result.add(customerDTO);
+                }
+                return result;
 
-            } catch (SQLException e) {
-                e.printStackTrace();
+            }catch(SQLException e) {
+                return null;
+            }
+            finally {
+                try {
+                    if(conn!= null) {
+                        conn.close();
+                    }
+                    if(statement!= null) {
+                        statement.close();
+                    }
+                    if(rs!= null) {
+                        rs.close();
+                    }
+                }catch(SQLException e) {
+                    return null;
+                }
             }
         }
         return null;
@@ -45,7 +68,7 @@ public class CustomerJDBC implements ICustomerJDBC {
     }
 
     @Override
-    public List<CustomerDTO> addCustomer(CustomerDTO customerDTO) {
+    public void addCustomer(CustomerDTO customerDTO) {
         String sql = "INSERT INTO customer (name,phone,email) VALUES (?,?,?)";
         Connection conn= getConnection();
         PreparedStatement statement = null;
@@ -53,7 +76,7 @@ public class CustomerJDBC implements ICustomerJDBC {
         if(conn!=null) {
             try {
                 statement=conn.prepareStatement(sql);
-                statement.setString(1,customerDTO.getFullname());
+                statement.setString(1,customerDTO.getName());
                 statement.setString(2,customerDTO.getEmail());
                 statement.setString(3,customerDTO.getPhone());
 
@@ -77,7 +100,7 @@ public class CustomerJDBC implements ICustomerJDBC {
                 }
             }
         }
-        return null;
+
     }
 
 }

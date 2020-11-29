@@ -32,16 +32,16 @@ public class BuildingService implements IBuildingService {
     @Autowired
     private BuildingConverter buildingConverter;
 
-    @Override
-    public List<BuildingDTO> findAll() {
-        List<BuildingDTO> result = new ArrayList<>();
-        List<BuildingEntity> entities = buildingRepository.findAll();
-        for (BuildingEntity item: entities){
-            BuildingDTO buildingDTO = buildingConverter.convertToDto(item);
-            result.add(buildingDTO);
-        }
-        return result;
-    }
+//    @Override
+//    public List<SearchBuildingDTO> search() {
+//        List<SearchBuildingDTO> result = new ArrayList<>();
+//        List<BuildingEntity> entities = buildingRepository.search();
+//        for (BuildingEntity item: entities){
+//            BuildingDTO buildingDTO = buildingConverter.convertToDto(item);
+//            result.add(SearchBuildingDTO);
+//        }
+//        return result;
+//    }
 
     @Override
     @Transactional
@@ -78,6 +78,18 @@ public class BuildingService implements IBuildingService {
         List<BuildingDTO> result=iBuildingJDBC.editBuilding(buildingDTO);
         return result;
     }
+
+    @Override
+    public List<BuildingEntity> search(SearchBuildingDTO search) {
+        List<BuildingEntity> result=buildingRepository.findAll();
+        return result;
+    }
+
+//    @Override
+//    public List<BuildingEntity> search(SearchBuildingDTO search) {
+//        List<BuildingEntity> result=buildingRepository.
+//    }
+
     @Override
     @Transactional
     public void   addBuilding(BuildingDTO buildingDTO) {

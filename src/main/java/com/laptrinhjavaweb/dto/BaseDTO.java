@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class AbstractDTO<T> implements Serializable {
+public class BaseDTO<T> implements Serializable {
 
     private static final long serialVersionUID = 7213600440729202783L;
 

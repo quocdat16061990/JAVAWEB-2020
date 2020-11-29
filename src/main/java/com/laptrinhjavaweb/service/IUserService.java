@@ -8,6 +8,6 @@ import java.util.List;
 public interface IUserService {
     UserDTO findOneByUserNameAndStatus(String name, int status);
 
-    List<CustomerDTO> addCustomer(CustomerDTO customerDTO);
+    void addCustomer(CustomerDTO customerDTO);
     List<CustomerDTO> searchCustomer(CustomerDTO customerDTO);
 }
