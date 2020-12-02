@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ICustomerJDBC {
     List<CustomerDTO> searchCustomer(CustomerDTO customerDTO);
-    List<CustomerDTO> addCustomer(CustomerDTO customerDTO);
+    void addCustomer(CustomerDTO customerDTO);
 }

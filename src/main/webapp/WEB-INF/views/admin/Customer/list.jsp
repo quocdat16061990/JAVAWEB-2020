@@ -5,7 +5,7 @@
 <c:url var="customerListURL" value="/admin/customer-list" />
 <html>
 <head>
-    <title>Danh sách toà nhà</title>
+    <title>Danh sách khách hàng</title>
 </head>
 <body>
 
@@ -37,41 +37,20 @@
                         <div class="widget-body">
                             <div class="widget-main">
                                 <!-- PAGE CONTENT BEGINS -->
-                                <form:form commandName="modelSearch" action="${customerListURL}" id="listForm" method="GET">
+                                <form:form commandName="searchCustomer" action="${customerListURL}" id="listForm" method="GET">
                                     <div class="form-horizontal">
                                         <div class="form-group">
 
                                             <div class="col-sm-6">
                                                 <div>
-                                                    <label for="name">Tên toà nhà</label>
+                                                    <label for="name">Tên Khác Hàng</label>
                                                     <form:input path="name" cssClass="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div>
-                                                    <label for="name">Diện tích sàn</label>
-                                                    <input type="number" id="floorArea" class="form-control" name="floorArea" value="${modelSearch.floorArea}"/>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.form-group-->
-                                        <div class="form-group">
-                                            <div class="col-sm-4">
-                                                <label for="name">Quận</label>
-                                                <form:select path="district" class="form-control">
-                                                    <form:option value="" label="--- Chọn quận ---"/>
-                                                    <form:options items="${district}"/>
-                                                </form:select>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div>
-                                                    <label for="name">Phường</label>
-                                                    <form:input path="ward" cssClass="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div>
-                                                    <label for="name">Đường</label>
-                                                    <form:input path="street" cssClass="form-control" />
+                                                    <label for="phone">Phone</label>
+                                                    <input type="number" id="phone" class="form-control" name="phone" value="${searchCustomer.phone}"/>
                                                 </div>
                                             </div>
                                         </div><!-- /.form-group-->
@@ -79,80 +58,13 @@
 
                                             <div class="col-sm-4">
                                                 <div>
-                                                    <label for="name">Số tầng hầm</label>
-                                                    <input type="number" id="numberOfBasement" class="form-control" name="numberOfBasement" value="${modelSearch.numberOfBasement}"/>
+                                                    <label for="email">Email</label>
+                                                    <form:input path="email" cssClass="form-control" />
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4">
-                                                <div>
-                                                    <label for="name">Hướng</label>
-                                                        <%--                                                    <input type="text" id="ward" class="form-control" />--%>
-                                                    <form:input path="direction" cssClass="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div>
-                                                    <label for="name">Hạng</label>
-                                                    <form:input path="level" cssClass="form-control" />
-                                                </div>
-                                            </div>
-                                        </div><!-- /.form-group-->
-                                        <div class="form-group">
-                                            <div class="col-sm-3">
-                                                <div>
-                                                    <label for="name">Diện tích từ</label>
-                                                    <input type="text" id="areaRentFrom" class="form-control" name="areaRentFrom" value="${modelSearch.areaRentFrom}"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div>
-                                                    <label for="name">Diện tích đến</label>
-                                                    <input type="number" id="areaRentTo" class="form-control" name="areaRentTo" value="${modelSearch.areaRentTo}"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div>
-                                                    <label for="name">Giá thuê từ</label>
-                                                    <input type="text" id="costRentFrom" class="form-control" name="costRentFrom" value="${modelSearch.costRentFrom}"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div>
-                                                    <label for="name">Giá thuê đến</label>
-                                                    <input type="number" id="costRentTo" class="form-control" name="costRentTo" value="${modelSearch.costRentTo}"/>
-                                                </div>
-                                            </div>
+
                                         </div><!-- /.form-group-->
 
-                                        <div class="form-group">
-
-                                            <div class="col-sm-4">
-                                                <div>
-                                                    <label for="name">Tên quản lý</label>
-                                                        <%--                                                    <input type="text" id="managerName" class="form-control" />--%>
-                                                    <form:input path="managerName" cssClass="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div>
-                                                    <label for="name">Điện thoại quản lý</label>
-                                                        <%--                                                    <input type="text" id="managerPhone" class="form-control" />--%>
-                                                    <form:input path="managerPhone" cssClass="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <label for="name">Chọn nhân viên phụ trách</label>
-                                                <form:select path="staffId" class="form-control">
-                                                    <form:option value="" label="--- Chọn nhân viên ---"/>
-                                                    <form:options items="${staffmaps}"/>
-                                                </form:select>
-                                            </div>
-                                        </div><!-- /.form-group-->
-                                        <div class="form-group">
-                                            <div class="col-sm-4">
-                                                <form:checkboxes path="buildingTypes" items="${buildingTypes}"/>
-                                            </div>
-                                        </div>
                                         <div class="form-group">
                                             <div class="col-sm-9">
                                                 <button type="button" class="btn btn-success"id="btnSearch" path="">Tìm kiếm</button>
@@ -181,43 +93,25 @@
                         <thead>
                         <tr>
                             <th></th>
-                            <th>Tên toà nhà</th>
-                            <th>Địa chỉ</th>
-                            <th>Tên quản lý</th>
-                            <th>Số điện thoại</th>
-                            <th>Diện tích sàn</th>
-                            <th>Số tầng hầm</th>
-                            <th>Giá thuê</th>
-                            <th>Phí dịch vụ</th>
-                            <th>Thao tác</th>
+                            <th>Tên</th>
+                            <th>Di Động</th>
+                            <th>Email</th>
+                            <th>Người nhập</th>
+                            <th>Ngày Nhập</th>
+                            <th>Tình Trạng</th>
+                            <th>Thao Tác</th>
+
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="item" items="${buildingSearch}">
+                        <c:forEach var="item" items="${customerSearch}">
                             <tr>
                                 <th><label><input type="checkbox" value="1" id="checkbox"></label></th>
                                 <td>${item.name}</td>
-                                <td>${item.street}, ${item.ward}, ${item.district} </td>
-                                <td>${item.managerName}</td>
-                                <td>${item.managerPhone}</td>
-                                <td>${item.floorArea}</td>
-                                <td>${item.numberOfBasement}</td>
-                                <td>${item.rentPrice}</td>
-                                <td>${item.serviceFee}</td>
-                                <td>
-                                    <div class="hidden-sm hidden-xs action-buttons">
-                                        <a class ="blue" data-toggle="tooltip" data-placement="top" title="Giao toà nhà" onclick="assignmentBuilding(1)">
-                                            <i class="ace-icon fa fa-exchange bigger-130" ></i>
-                                        </a>
-                                        <a class="green" href="#">
-                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                        </a>
+                                <td>${item.phone}</td>
+                                <td>${item.email}</td>
 
-                                        <a class="red" href="#">
-                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                                        </a>
-                                    </div>
-                                </td>
+
                             </tr>
                         </c:forEach>
                         </tbody>
@@ -251,11 +145,11 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><label><input type="checkbox" value="2" id="checkbox"></label></td>
+                        <td><label><input type="checkbox" value="2" id="checkbox2"></label></td>
                         <td>Nguyễn Văn A</td>
                     </tr>
                     <tr>
-                        <td><label><input type="checkbox" value="3" id="checkbox"></label></td>
+                        <td><label><input type="checkbox" value="3" id="checkbox3"></label></td>
                         <td>Nguyễn Văn B</td>
                     </tr>
                     </tbody>
@@ -359,7 +253,7 @@
         data['buildingTypes'] = buildingTypes;
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/api-building",
+            url: "http://localhost:8080/api-customer",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",

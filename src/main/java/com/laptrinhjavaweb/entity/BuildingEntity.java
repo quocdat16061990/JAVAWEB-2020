@@ -6,92 +6,105 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "building")
-public class BuildingEntity extends BaseEntity{
+public class BuildingEntity extends BaseEntity {
 
-    @Column(name = "name", unique = true)
+    private static final long serialVersionUID = -2853379557934065188L;
+
+    @Column (name="name")
     private String name;
 
-    @Column(name = "street" )
+    @Column
+    private String province;
+
+    @Column
     private String street;
 
-    @Column(name = "ward" )
-    private String ward;
-
-    @Column(name = "district" )
-    private String district;
-
-    @Column(name = "structure" )
+    @Column
     private String structure;
 
-    @Column(name = "numberofbasement" )
+    @Column(name = "numberofbasement")
     private Integer numberOfBasement;
 
-    @Column(name = "floorarea" )
+    @Column
     private Integer floorArea;
 
-    @Column(name = "direction" )
+    @Column
     private String direction;
 
-    @Column(name = "level" )
+    @Column
     private String level;
 
-    @Column(name = "rentprice" )
-    private Integer rentPrice;
+    @Column
+    private String feesBrokerage;
 
-    @Column(name = "rentpricedescription" )
-    private String rentPriceDescription;
+    @Column(columnDefinition = "TEXT")
+    private String rentArea;
 
-    @Column(name = "servicefee" )
-    private String serviceFee;
+    @Column(columnDefinition = "TEXT")
+    private String areaDescription;
 
-    @Column(name = "carfee" )
-    private String carFee;
+    @Column
+    private Integer costRent;
 
-    @Column(name = "motorbikefee" )
-    private String motorbikeFee;
+    @Column(columnDefinition = "TEXT")
+    private String costDescription;
 
-    @Column(name = "overtimefee" )
-    private String overtimeFee;
+    @Column
+    private String serviceCost;
 
-    @Column(name = "waterfee" )
-    private String waterFee;
+    @Column
+    private String carCost;
 
-    @Column(name = "electricityfee" )
-    private String electricityFee;
+    @Column
+    private String motorbikeCost;
 
-    @Column(name = "deposit" )
+    @Column
+    private String overtimeCost;
+
+    @Column
+    private String electricityCost;
+
+    @Column
     private String deposit;
 
-    @Column(name = "payment" )
+    @Column
     private String payment;
 
-    @Column(name = "renttime" )
-    private String rentTime;
+    @Column
+    private String timeContract;
 
-    @Column(name = "decorationtime" )
-    private String decorationTime;
+    @Column
+    private String timeDecorator;
 
-    @Column(name = "brokeragefee" )
-    private String brokerageFee;
-
-    @Column(name = "note" )
-    private String note;
-
-    @Column(name = "linkofbuilding" )
-    private String linkOfBuilding;
-
-    @Column(name = "map" )
-    private String map;
-
-    @Column(name = "image" )
-    private String image;
-
-    @Column(name = "managername" )
+    @Column
     private String managerName;
 
-    @Column(name = "managerphone" )
+    @Column
     private String managerPhone;
 
+    @Column
+    private String commission;
+
+    @Column(columnDefinition = "TEXT")
+    private String type;
+
+    @Column
+    private String district;
+
+    @Column(columnDefinition = "TEXT")
+    private String note;
+
+    @Column
+    private String link;
+
+    @Column
+    private String location;
+
+    @Column
+    private String image;
+
+    @Column
+    private String areaFree;
 
     public String getName() {
         return name;
@@ -99,6 +112,14 @@ public class BuildingEntity extends BaseEntity{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
     }
 
     public String getStreet() {
@@ -109,44 +130,12 @@ public class BuildingEntity extends BaseEntity{
         this.street = street;
     }
 
-    public String getWard() {
-        return ward;
-    }
-
-    public void setWard(String ward) {
-        this.ward = ward;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-
     public String getStructure() {
         return structure;
     }
 
     public void setStructure(String structure) {
         this.structure = structure;
-    }
-
-    public Integer getNumberOfBasement() {
-        return numberOfBasement;
-    }
-
-    public void setNumberOfBasement(Integer numberOfBasement) {
-        this.numberOfBasement = numberOfBasement;
-    }
-
-    public Integer getFloorArea() {
-        return floorArea;
-    }
-
-    public void setFloorArea(Integer floorArea) {
-        this.floorArea = floorArea;
     }
 
     public String getDirection() {
@@ -165,68 +154,60 @@ public class BuildingEntity extends BaseEntity{
         this.level = level;
     }
 
-    public Integer getRentPrice() {
-        return rentPrice;
+    public String getAreaDescription() {
+        return areaDescription;
     }
 
-    public void setRentPrice(Integer rentPrice) {
-        this.rentPrice = rentPrice;
+    public void setAreaDescription(String areaDescription) {
+        this.areaDescription = areaDescription;
     }
 
-    public String getRentPriceDescription() {
-        return rentPriceDescription;
+    public String getCostDescription() {
+        return costDescription;
     }
 
-    public void setRentPriceDescription(String rentPriceDescription) {
-        this.rentPriceDescription = rentPriceDescription;
+    public void setCostDescription(String costDescription) {
+        this.costDescription = costDescription;
     }
 
-    public String getServiceFee() {
-        return serviceFee;
+    public String getServiceCost() {
+        return serviceCost;
     }
 
-    public void setServiceFee(String serviceFee) {
-        this.serviceFee = serviceFee;
+    public void setServiceCost(String serviceCost) {
+        this.serviceCost = serviceCost;
     }
 
-    public String getCarFee() {
-        return carFee;
+    public String getCarCost() {
+        return carCost;
     }
 
-    public void setCarFee(String carFee) {
-        this.carFee = carFee;
+    public void setCarCost(String carCost) {
+        this.carCost = carCost;
     }
 
-    public String getMotorbikeFee() {
-        return motorbikeFee;
+    public String getMotorbikeCost() {
+        return motorbikeCost;
     }
 
-    public void setMotorbikeFee(String motorbikeFee) {
-        this.motorbikeFee = motorbikeFee;
+    public void setMotorbikeCost(String motorbikeCost) {
+        this.motorbikeCost = motorbikeCost;
     }
 
-    public String getOvertimeFee() {
-        return overtimeFee;
+    public String getOvertimeCost() {
+        return overtimeCost;
     }
 
-    public void setOvertimeFee(String overtimeFee) {
-        this.overtimeFee = overtimeFee;
+    public void setOvertimeCost(String overtimeCost) {
+        this.overtimeCost = overtimeCost;
     }
 
-    public String getWaterFee() {
-        return waterFee;
+    public String getElectricityCost() {
+        return electricityCost;
     }
 
-    public void setWaterFee(String waterFee) {
-        this.waterFee = waterFee;
-    }
-
-    public String getElectricityFee() {
-        return electricityFee;
-    }
-
-    public void setElectricityFee(String electricityFee) {
-        this.electricityFee = electricityFee;
+    public void setElectricityCost(String electricityCost) {
+        this.electricityCost = electricityCost;
     }
 
     public String getDeposit() {
@@ -245,28 +226,28 @@ public class BuildingEntity extends BaseEntity{
         this.payment = payment;
     }
 
-    public String getRentTime() {
-        return rentTime;
+    public String getTimeContract() {
+        return timeContract;
     }
 
-    public void setRentTime(String rentTime) {
-        this.rentTime = rentTime;
+    public void setTimeContract(String timeContract) {
+        this.timeContract = timeContract;
     }
 
-    public String getDecorationTime() {
-        return decorationTime;
+    public String getTimeDecorator() {
+        return timeDecorator;
     }
 
-    public void setDecorationTime(String decorationTime) {
-        this.decorationTime = decorationTime;
+    public void setTimeDecorator(String timeDecorator) {
+        this.timeDecorator = timeDecorator;
     }
 
-    public String getBrokerageFee() {
-        return brokerageFee;
+    public String getType() {
+        return type;
     }
 
-    public void setBrokerageFee(String brokerageFee) {
-        this.brokerageFee = brokerageFee;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getNote() {
@@ -277,20 +258,20 @@ public class BuildingEntity extends BaseEntity{
         this.note = note;
     }
 
-    public String getLinkOfBuilding() {
-        return linkOfBuilding;
+    public String getLink() {
+        return link;
     }
 
-    public void setLinkOfBuilding(String linkOfBuilding) {
-        this.linkOfBuilding = linkOfBuilding;
+    public void setLink(String link) {
+        this.link = link;
     }
 
-    public String getMap() {
-        return map;
+    public String getLocation() {
+        return location;
     }
 
-    public void setMap(String map) {
-        this.map = map;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getImage() {
@@ -299,6 +280,22 @@ public class BuildingEntity extends BaseEntity{
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public Integer getNumberOfBasement() {
+        return numberOfBasement;
+    }
+
+    public void setNumberOfBasement(Integer numberOfBasement) {
+        this.numberOfBasement = numberOfBasement;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
     }
 
     public String getManagerName() {
@@ -317,4 +314,51 @@ public class BuildingEntity extends BaseEntity{
         this.managerPhone = managerPhone;
     }
 
+    public String getCommission() {
+        return commission;
+    }
+
+    public void setCommission(String commission) {
+        this.commission = commission;
+    }
+
+    public String getAreaFree() {
+        return areaFree;
+    }
+
+    public void setAreaFree(String areaFree) {
+        this.areaFree = areaFree;
+    }
+
+    public String getRentArea() {
+        return rentArea;
+    }
+
+    public void setRentArea(String rentArea) {
+        this.rentArea = rentArea;
+    }
+
+    public Integer getCostRent() {
+        return costRent;
+    }
+
+    public void setCostRent(Integer costRent) {
+        this.costRent = costRent;
+    }
+
+    public String getFeesBrokerage() {
+        return feesBrokerage;
+    }
+
+    public void setFeesBrokerage(String feesBrokerage) {
+        this.feesBrokerage = feesBrokerage;
+    }
+
+    public Integer getFloorArea() {
+        return floorArea;
+    }
+
+    public void setFloorArea(Integer floorArea) {
+        this.floorArea = floorArea;
+    }
 }

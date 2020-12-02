@@ -15,18 +15,25 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller(value = "customerControllerofAdmin")
 public class CustomerController {
 
-    @Autowired
-    private BuildingService buildingService;
+
     @Autowired
     private IUserService userService;
 
     @RequestMapping(value = "/admin/customer-list", method = RequestMethod.GET)
-    public ModelAndView buildingList(@ModelAttribute("modelSearch") CustomerDTO customerDTO) {
+    public ModelAndView buildingList(@ModelAttribute("searchCustomer") CustomerDTO customerDTO) {
         ModelAndView mav = new ModelAndView("admin/customer/list");
-        mav.addObject("modelSearch", customerDTO);
+        mav.addObject("searchCustomer", customerDTO);
 //        mav.addObject("addCustomer"),userService.addCustomer(customerDTO);
-        mav.addObject("searchCustomer", userService.searchCustomer(customerDTO));
-        mav.addObject("addCustomer",userService.addCustomer(customerDTO));
+        mav.addObject("customerSearch", userService.searchCustomer(customerDTO));
+
+
+        return mav;
+    }
+    @RequestMapping(value = "/admin/customer-edit", method = RequestMethod.GET)
+    public ModelAndView buildingEdit(@ModelAttribute("addCustomer")CustomerDTO customerDTO) {
+        ModelAndView mav = new ModelAndView("admin/customer/edit");
+        mav.addObject("addCustomer",customerDTO);
+
 
 
         return mav;

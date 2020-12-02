@@ -2,17 +2,17 @@ package com.laptrinhjavaweb.dto;
 
 public class CustomerDTO {
 
-    private String fullname;
+    private String name;
     private String phone;
     private String email;
 
 
-    public String getFullname() {
-        return fullname;
+    public String getName() {
+        return name;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPhone() {

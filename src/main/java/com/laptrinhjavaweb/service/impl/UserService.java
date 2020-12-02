@@ -12,6 +12,7 @@ import com.laptrinhjavaweb.repository.jdbc.impl.CustomerJDBC;
 import com.laptrinhjavaweb.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -32,9 +33,10 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public List<CustomerDTO> addCustomer(CustomerDTO customerDTO) {
-        List<CustomerDTO> result=iCustomerJDBC.addCustomer(customerDTO);
-        return result;
+    @Transactional
+    public void   addCustomer(CustomerDTO customerDTO) {
+        iCustomerJDBC.addCustomer(customerDTO);
+
     }
 
     @Override

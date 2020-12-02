@@ -2,6 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/common/taglib.jsp"%>
 <c:url var="buildingAPI" value="/api/building" />
+<c:url var="buildingEditUrl" value="/admin/building-edit"/>
+
 <html>
 <head>
     <title>Building Edit</title>
@@ -23,7 +25,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
-                    <form:form commandName="addBuilding" class="form-horizontal" role="form" id="formEdit">
+                    <form:form commandName="addBuilding" class="form-horizontal" role="form" id="formEdit" method="post">
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="name"> Tên toà nhà </label>
 
