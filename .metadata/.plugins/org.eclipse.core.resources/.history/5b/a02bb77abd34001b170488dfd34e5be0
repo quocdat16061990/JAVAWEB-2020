@@ -1,0 +1,108 @@
+package com.laptrinhjavaweb.entity;
+
+import java.sql.Timestamp;
+
+import com.laptrinhjavaweb.annotation.Column;
+import com.laptrinhjavaweb.annotation.Entity;
+
+@Entity
+public class BuildingEntity {
+	
+	private Long id;
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="ward")
+	private String ward;
+	
+	@Column(name="street")
+	private String street;
+	
+	@Column(name="structure")
+	private String structure;
+	
+	@Column(name="numberOfBasement")
+	private Integer numberOfBasement;
+	
+	@Column(name="floorarea")
+	private Integer floorArea;
+	
+	private String createdBy;
+	
+	private String modifiedBy;
+	
+
+	}
+	private Timestamp createddate;
+	
+	private Timestamp modifielddate;
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+	public String getModifiedBy() {
+		return modifiedBy;
+	}
+	public void setModifiedBy(String modifiedBy) {
+		this.modifiedBy = modifiedBy;
+	}
+
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getWard() {
+		return ward;
+	}
+	public void setWard(String ward) {
+		this.ward = ward;
+	}
+	public String getStreet() {
+		return street;
+	}
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	public String getStructure() {
+		return structure;
+	}
+	public void setStructure(String structure) {
+		this.structure = structure;
+	}
+	public Integer getNumberOfBasement() {
+		return numberOfBasement;
+	}
+	public void setNumberOfBasement(Integer numberOfBasement) {
+		this.numberOfBasement = numberOfBasement;
+	}
+	public Integer getFloorArea() {
+		return floorArea;
+	}
+	public void setFloorArea(Integer floorArea) {
+		this.floorArea = floorArea;
+	}
+	public Timestamp getCreateddate() {
+		return createddate;
+	}
+	public void setCreateddate(Timestamp createddate) {
+		this.createddate = createddate;
+	}
+	public Timestamp getModifielddate() {
+		return modifielddate;
+	}
+	public void setModifielddate(Timestamp modifielddate) {
+		this.modifielddate = modifielddate;
+}

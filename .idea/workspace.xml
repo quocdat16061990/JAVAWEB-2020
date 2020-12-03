@@ -7,31 +7,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3eb1733-c955-4c38-976d-9f373147e95f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/controller/admin/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/controller/admin/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/dto/AbstractDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/dto/BaseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/dto/CustomerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/entity/BuildingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/entity/BuildingEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/jdbc/ICustomerJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/jdbc/ICustomerJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/jdbc/impl/CustomerJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/jdbc/impl/CustomerJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/IBuildingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/IBuildingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/impl/BuildingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/impl/BuildingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/impl/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/Customer/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/building/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/building/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/building/update.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/repository/jdbc/ICustomerJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/repository/jdbc/ICustomerJDBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/repository/jdbc/impl/CustomerJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/repository/jdbc/impl/CustomerJDBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/service/impl/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/service/impl/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-boot-1.0/WEB-INF/classes/com/laptrinhjavaweb/repository/jdbc/ICustomerJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-boot-1.0/WEB-INF/classes/com/laptrinhjavaweb/repository/jdbc/ICustomerJDBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-boot-1.0/WEB-INF/classes/com/laptrinhjavaweb/repository/jdbc/impl/CustomerJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-boot-1.0/WEB-INF/classes/com/laptrinhjavaweb/repository/jdbc/impl/CustomerJDBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-boot-1.0/WEB-INF/classes/com/laptrinhjavaweb/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-boot-1.0/WEB-INF/classes/com/laptrinhjavaweb/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-boot-1.0/WEB-INF/classes/com/laptrinhjavaweb/service/impl/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-boot-1.0/WEB-INF/classes/com/laptrinhjavaweb/service/impl/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-boot-1.0/WEB-INF/views/admin/building/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-boot-1.0/WEB-INF/views/admin/building/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-boot-1.0/WEB-INF/views/admin/building/update.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/BuildingRepositoryCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/BuildingRepositoryCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/CustomerRepositoryCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/CustomerRepositoryCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/SpringBootWebApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/api/admin/BuildingAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/api/web/NewAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/config/JpaAuditingConfig$AuditorAwareImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/config/JpaAuditingConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/config/ModelMapperConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/config/WebSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/constant/SystemConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/controller/admin/BuildingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/controller/admin/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/controller/admin/HomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/controller/web/HomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/converter/BuildingConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/converter/UserConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/dto/AbstractDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/dto/BuildingDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/dto/CustomerDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/dto/MyUserDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/dto/RoleDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/dto/SearchBuildingDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/dto/UserDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/entity/BaseEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/entity/BuildingEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/entity/RoleEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/entity/UserEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/enums/buildingTypes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/enums/districts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/repository/BuildingRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/repository/jdbc/IBuildingJDBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/repository/jdbc/ICustomerJDBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/repository/jdbc/impl/BuildingJDBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/repository/jdbc/impl/CustomerJDBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/security/CustomSuccessHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/security/utils/SecurityUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/service/IBuildingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/service/IUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/service/impl/BuildingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/service/impl/CustomUserDetailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/service/impl/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/laptrinhjavaweb/util/MessageUtil.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,18 +105,19 @@
     <session id="-1413645458">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.37" value="2" />
+          <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
           <entry key="css" value="1" />
-          <entry key="java" value="32" />
+          <entry key="java" value="33" />
           <entry key="jsp" value="7" />
           <entry key="properties" value="1" />
         </counts>
@@ -107,20 +126,20 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="CSS" value="1" />
-          <entry key="JAVA" value="32" />
+          <entry key="JAVA" value="33" />
           <entry key="JSP" value="7" />
           <entry key="Properties" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="959" />
+          <entry key="java" value="1039" />
           <entry key="jsp" value="569" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="959" />
+          <entry key="JAVA" value="1039" />
           <entry key="JSP" value="569" />
         </counts>
       </usages-collector>
@@ -129,10 +148,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/jdbc/impl/BuildingJDBC.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/CustomerRepositoryCustom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2584">
-              <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,13 +160,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/CustomerRepositoryCustom.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/impl/CustomUserDetailService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -155,8 +171,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/BuildingRepositoryCustom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state relative-caret-position="136">
+              <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -167,8 +183,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/impl/BuildingRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1294">
-              <caret line="85" column="66" selection-start-line="85" selection-start-column="66" selection-end-line="85" selection-end-column="66" />
+            <state relative-caret-position="289">
+              <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -179,8 +195,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/impl/BuildingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="83" column="64" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
+            <state relative-caret-position="50">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="43" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -188,7 +204,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/1.11.23.RELEASE/spring-data-jpa-1.11.23.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
+            <state relative-caret-position="136">
               <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
             </state>
           </provider>
@@ -197,7 +213,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/entity/BuildingEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="102">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -221,7 +237,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/jdbc/IBuildingJDBC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="85">
               <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -233,8 +249,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/IBuildingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="221">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -288,11 +304,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/entity/CustomerEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/entity/BuildingEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/dto/AbstractDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/CustomerRepositoryCustom.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/impl/BuildingRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/impl/CustomerRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/BuildingRepositoryCustom.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/IBuildingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/CustomerRepositoryCustom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/BuildingRepositoryCustom.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/impl/BuildingService.java" />
       </list>
     </option>
@@ -698,17 +714,18 @@
       <workItem from="1606112281792" duration="3751000" />
       <workItem from="1606322746916" duration="31000" />
       <workItem from="1606655797946" duration="7310000" />
+      <workItem from="1607002187876" duration="2092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42479000" />
+    <option name="totallyTimeSpent" value="44571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.27987897" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.28441754" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -834,13 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/impl/CustomUserDetailService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/IUserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -859,9 +869,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1017,6 +1024,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/jdbc/impl/BuildingJDBC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/1.11.23.RELEASE/spring-data-jpa-1.11.23.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/entity/BuildingEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/jdbc/IBuildingJDBC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/IBuildingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/impl/CustomerRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1027,10 +1078,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/impl/CustomUserDetailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/CustomerRepositoryCustom.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1039,35 +1097,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/BuildingRepositoryCustom.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/jdbc/IBuildingJDBC.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/IBuildingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/entity/BuildingEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1076,25 +1107,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/custom/impl/BuildingRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1294">
-          <caret line="85" column="66" selection-start-line="85" selection-start-column="66" selection-end-line="85" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/1.11.23.RELEASE/spring-data-jpa-1.11.23.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/repository/jdbc/impl/BuildingJDBC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2584">
-          <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        <state relative-caret-position="289">
+          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1103,8 +1117,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/laptrinhjavaweb/service/impl/BuildingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="83" column="64" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
+        <state relative-caret-position="50">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="43" selection-end-column="7" />
         </state>
       </provider>
     </entry>

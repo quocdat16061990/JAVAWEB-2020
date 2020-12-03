@@ -6,6 +6,6 @@ import com.laptrinhjavaweb.entity.BuildingEntity;
 import java.util.List;
 
 public interface BuildingRepositoryCustom {
-    List<BuildingEntity> search(SearchBuildingDTO search);
+    List<BuildingEntity> search(SearchBuildingDTO search);;
 
 }

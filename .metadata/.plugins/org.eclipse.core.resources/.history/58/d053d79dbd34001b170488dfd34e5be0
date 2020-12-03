@@ -1,0 +1,35 @@
+package com.laptrinhjavaweb.jdbc;
+
+import java.util.List;
+
+import com.laptrinhjavaweb.DTO.BuildingDTO;
+import com.laptrinhjavaweb.entity.BuildingEntity;
+import com.laptrinhjavaweb.mapper.BuildingMapper;
+
+public class OperationMain {
+	public static void main(String[] args) {
+		
+		AbstractJDBC<BuildingDTO> abstractJDBC=new AbstractJDBC<>();
+////		insert
+////
+//		String sql="INSERT INTO building (name,street,ward,structure,numberofbasement,floorarea) VALUES (?,?,?,?,?,?)";
+//		System.out.println(abstractJDBC.insert(sql, "Chung Cu Rivera Part","Le Hong Phong","Phuong 14","Huong Nam",6,200));
+////		update
+//		String sql2="UPDATE building SET name=?, ward=?,street=? WHERE id=?;";
+//		AbstractJDBC.update(sql2, "Chung Cu Xi Grand Court","Phuong 14","Ly Thuong Kiet",16);
+////		delete
+//		String sql3="DELETE FROM building WHERE id=?";
+//		AbstractJDBC.update(sql3, 20);
+	
+//		select
+		String sql4= "select * from building";
+		List<BuildingEntity> results=abstractJDBC.query(sql4, BuildingEntity.class);
+//		for(BuildingEntity item:results) {
+//			System.out.prinln("Ten toa nha : " +item.getName());
+//			
+//		}
+		
+
+	}
+
+}
