@@ -15,7 +15,7 @@ public class BuildingRepositoryImpl implements BuildingRepositoryCustom {
     private EntityManager entityManager;
 
     @Override
-    public List<BuildingEntity> search(SearchBuildingDTO search) {
+    public List<BuildingEntity> findAll(SearchBuildingDTO search) {
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT b.* FROM building as b");
         if (search.getStaffId() != null) {

@@ -1,6 +1,7 @@
 package com.laptrinhjavaweb.converter;
 
 import com.laptrinhjavaweb.dto.BuildingDTO;
+import com.laptrinhjavaweb.dto.SearchBuildingDTO;
 import com.laptrinhjavaweb.entity.BuildingEntity;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ public class BuildingConverter {
     @Autowired
     private ModelMapper modelMapper;
 
-    public BuildingDTO convertToDto (BuildingEntity entity){
+    public SearchBuildingDTO convertToDto (BuildingEntity entity){
         BuildingDTO result = modelMapper.map(entity, BuildingDTO.class);
         return result;
     }

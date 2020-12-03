@@ -9,11 +9,13 @@ import java.util.Map;
 
 public interface IBuildingService {
 
+    List<SearchBuildingDTO> findAll();
+
     void save(BuildingDTO buildingDTO);
     Map<String, String> getDistricts();
     Map<String, String> getBuildingTypes();
     List<BuildingDTO> searchBuilding(SearchBuildingDTO searchBuildingDTO);
     void addBuilding(BuildingDTO buildingDTO);
     List<BuildingDTO>  editBuilding(BuildingDTO buildingDTO);
-    List<BuildingEntity> search(SearchBuildingDTO search);
+    List<BuildingEntity> findAll(SearchBuildingDTO search);
 }
