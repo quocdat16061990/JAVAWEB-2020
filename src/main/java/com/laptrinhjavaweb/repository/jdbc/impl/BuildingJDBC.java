@@ -1,7 +1,6 @@
 package com.laptrinhjavaweb.repository.jdbc.impl;
 
 import com.laptrinhjavaweb.dto.BuildingDTO;
-import com.laptrinhjavaweb.dto.SearchBuildingDTO;
 import com.laptrinhjavaweb.repository.jdbc.IBuildingJDBC;
 
 import java.sql.*;
@@ -23,7 +22,7 @@ public class BuildingJDBC implements IBuildingJDBC {
         return null;
     }
     @Override
-    public List<BuildingDTO> search(SearchBuildingDTO search) {
+    public List<BuildingDTO> search(BuildingDTO search) {
         List<BuildingDTO> result = new ArrayList<>();
         StringBuilder builder = new StringBuilder();
         builder.append("SELECT b.* FROM building as b");
@@ -195,7 +194,7 @@ public class BuildingJDBC implements IBuildingJDBC {
                statement.setInt(9,buildingDTO.getFloorArea());
                statement.setString(10,buildingDTO.getDistrict());
                statement.setString(11,buildingDTO.getDirection());
-               statement.setString(12, String.valueOf(buildingDTO.getTypeArrays()));
+               statement.setString(12, String.valueOf(buildingDTO.getBuildingTypes()));
 
 
             } catch (SQLException e) {

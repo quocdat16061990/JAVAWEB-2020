@@ -2,7 +2,6 @@ package com.laptrinhjavaweb.controller.admin;
 
 
 import com.laptrinhjavaweb.dto.CustomerDTO;
-import com.laptrinhjavaweb.dto.SearchBuildingDTO;
 import com.laptrinhjavaweb.service.IUserService;
 import com.laptrinhjavaweb.service.impl.BuildingService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,5 @@
 package com.laptrinhjavaweb.repository.jdbc.impl;
 
-import com.laptrinhjavaweb.dto.BuildingDTO;
 import com.laptrinhjavaweb.dto.CustomerDTO;
 import com.laptrinhjavaweb.repository.jdbc.ICustomerJDBC;
 
@@ -11,7 +10,7 @@ public class CustomerJDBC implements ICustomerJDBC {
     public Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url="jdbc:mysql://localhost:3306/javawebspringboot";
+            String url="jdbc:mysql://localhost:3306/estateadvance";
             String username="root";
             String password="quocdat16061990";
             return DriverManager.getConnection(url,username,password);

@@ -2,7 +2,6 @@ package com.laptrinhjavaweb.service.impl;
 
 import com.laptrinhjavaweb.converter.BuildingConverter;
 import com.laptrinhjavaweb.dto.BuildingDTO;
-import com.laptrinhjavaweb.dto.SearchBuildingDTO;
 import com.laptrinhjavaweb.entity.BuildingEntity;
 import com.laptrinhjavaweb.repository.BuildingRepository;
 import com.laptrinhjavaweb.repository.jdbc.IBuildingJDBC;
@@ -33,11 +32,13 @@ public class BuildingService implements IBuildingService {
     private BuildingConverter buildingConverter;
 
     @Override
-    public List<BuildingDTO> findAll() {
+    public List<BuildingDTO> findAll(BuildingDTO model) {
         List<BuildingDTO> result = new ArrayList<>();
+
         List<BuildingEntity> entities = buildingRepository.findAll();
         for (BuildingEntity item: entities){
-            BuildingDTO buildingDTO = buildingConverter.convertToDto(item);
+//            BuildingDTO buildingDTO = buildingConverter.convertToDto(item);
+            BuildingDTO buildingDTO=buildingConverter.convertToDto(item);
             result.add(buildingDTO);
         }
         return result;
@@ -49,6 +50,8 @@ public class BuildingService implements IBuildingService {
         BuildingEntity buildingEntity = buildingConverter.convertToEntity(buildingDTO);
         buildingRepository.save(buildingEntity);
     }
+
+
 
     @Override
     public Map<String, String> getDistricts() {
@@ -69,7 +72,7 @@ public class BuildingService implements IBuildingService {
     }
 
     @Override
-    public List<BuildingDTO> searchBuilding(SearchBuildingDTO searchBuildingDTO) {
+    public List<BuildingDTO> searchBuilding(BuildingDTO searchBuildingDTO) {
          List<BuildingDTO> result=iBuildingJDBC.search(searchBuildingDTO);
         return result;
     }

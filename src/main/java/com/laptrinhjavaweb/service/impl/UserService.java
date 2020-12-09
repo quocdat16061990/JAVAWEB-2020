@@ -1,13 +1,10 @@
 package com.laptrinhjavaweb.service.impl;
 
 import com.laptrinhjavaweb.converter.UserConverter;
-import com.laptrinhjavaweb.dto.BuildingDTO;
 import com.laptrinhjavaweb.dto.CustomerDTO;
 import com.laptrinhjavaweb.dto.UserDTO;
 import com.laptrinhjavaweb.repository.UserRepository;
-import com.laptrinhjavaweb.repository.jdbc.IBuildingJDBC;
 import com.laptrinhjavaweb.repository.jdbc.ICustomerJDBC;
-import com.laptrinhjavaweb.repository.jdbc.impl.BuildingJDBC;
 import com.laptrinhjavaweb.repository.jdbc.impl.CustomerJDBC;
 import com.laptrinhjavaweb.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
