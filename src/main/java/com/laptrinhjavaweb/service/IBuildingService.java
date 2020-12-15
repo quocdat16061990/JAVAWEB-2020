@@ -6,12 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 public interface IBuildingService {
-    List<BuildingDTO> findAll(BuildingDTO model);
-    void save(BuildingDTO buildingDTO);
+        List<BuildingDTO> findAll(BuildingDTO model);
+        void save(BuildingDTO buildingDTO);
+        void saveJPA(BuildingDTO buildingDTO);
+        Map<String, String> getDistricts();
 
-    Map<String, String> getDistricts();
-    Map<String, String> getBuildingTypes();
-    List<BuildingDTO> searchBuilding(BuildingDTO searchBuildingDTO);
-    void addBuilding(BuildingDTO buildingDTO);
-    List<BuildingDTO>  editBuilding(BuildingDTO buildingDTO);
+        Map<String, String> getBuildingTypes();
+
+        List<BuildingDTO> findBuildingJPA(BuildingDTO model);
+        void saveByPersist(BuildingDTO buildingDTO);
 }
+

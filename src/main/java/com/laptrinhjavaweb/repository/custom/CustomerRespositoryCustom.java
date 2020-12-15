@@ -6,6 +6,6 @@ import com.laptrinhjavaweb.entity.CustomerEntity;
 import java.util.List;
 
 public interface CustomerRespositoryCustom {
-    List<CustomerEntity> findByFullNameAndPhoneAndEmail(String fullName,String phone,String email);
-    void saveCustomer(CustomerEntity customerEntity);
+    List<CustomerEntity> findByFullNameAndPhoneAndEmail(CustomerDTO model);
+    void saveCustomer(CustomerDTO customerDTO);
 }

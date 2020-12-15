@@ -59,7 +59,7 @@
                                                 <label for="name">Quận</label>
                                                 <form:select path="district" class="form-control">
                                                     <form:option value="" label="--- Chọn quận ---"/>
-                                                    <form:options items="${district}"/>
+                                                    <form:options items="${districts}"/>
                                                 </form:select>
                                             </div>
                                             <div class="col-sm-4">
@@ -101,25 +101,25 @@
                                             <div class="col-sm-3">
                                                 <div>
                                                     <label for="name">Diện tích từ</label>
-                                                    <input type="text" id="areaRentFrom" class="form-control" name="areaRentFrom" value="${modelSearch.areaRentFrom}"/>
+                                                    <input type="text" id="rentAreaFrom" class="form-control" name="rentAreaFrom" value="${modelSearch.rentAreaFrom}"/>
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
                                                 <div>
                                                     <label for="name">Diện tích đến</label>
-                                                    <input type="number" id="areaRentTo" class="form-control" name="areaRentTo" value="${modelSearch.areaRentTo}"/>
+                                                    <input type="number" id="rentAreaTo" class="form-control" name="rentAreaTo" value="${modelSearch.rentAreaTo}"/>
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
                                                 <div>
                                                     <label for="name">Giá thuê từ</label>
-                                                    <input type="text" id="costRentFrom" class="form-control" name="costRentFrom" value="${modelSearch.costRentFrom}"/>
+                                                    <input type="text" id="costRentFrom" class="form-control" name="costRentFrom" value="${modelSearch.rentCostFrom}"/>
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
                                                 <div>
                                                     <label for="name">Giá thuê đến</label>
-                                                    <input type="number" id="costRentTo" class="form-control" name="costRentTo" value="${modelSearch.costRentTo}"/>
+                                                    <input type="number" id="costRentTo" class="form-control" name="costRentTo" value="${modelSearch.rentCostTo}"/>
                                                 </div>
                                             </div>
                                         </div><!-- /.form-group-->
@@ -150,7 +150,7 @@
                                         </div><!-- /.form-group-->
                                         <div class="form-group">
                                             <div class="col-sm-4">
-                                                <form:checkboxes path="buildingTypes" items="${buildingTypes}"/>
+                                                <form:checkboxes path="type" items="${buildingTypes}"/>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -193,7 +193,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="item" items="${buildingSearch}">
+                        <c:forEach var="item" items="${buildingSearchCustom}">
                             <tr>
                                 <th><label><input type="checkbox" value="1" id="checkbox"></label></th>
                                 <td>${item.name}</td>
@@ -202,8 +202,8 @@
                                 <td>${item.managerPhone}</td>
                                 <td>${item.floorArea}</td>
                                 <td>${item.numberOfBasement}</td>
-                                <td>${item.rentPrice}</td>
-                                <td>${item.serviceFee}</td>
+                                <td>${item.rentCost}</td>
+                                <td>${item.serviceCost}</td>
                                 <td>
                                     <div class="hidden-sm hidden-xs action-buttons">
                                         <a class ="blue" data-toggle="tooltip" data-placement="top" title="Giao toà nhà" onclick="assignmentBuilding(1)">

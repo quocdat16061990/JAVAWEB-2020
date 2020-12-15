@@ -15,7 +15,7 @@ public class BuildingAPI {
 
     @PostMapping("/api/building")
     public BuildingDTO createBuilding(@RequestBody BuildingDTO newBuilding){
-        buildingService.addBuilding(newBuilding);
+        buildingService.saveByPersist(newBuilding);
         return newBuilding;
     }
 }

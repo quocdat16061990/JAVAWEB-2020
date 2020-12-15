@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/common/taglib.jsp"%>
 <c:url var="buildingAPI" value="/api/building" />
+<c:url var="buildingEditURL" value="/admin/building-edit"/>
 <html>
 <head>
     <title>Building Edit</title>
@@ -23,7 +24,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
-                    <form:form commandName="addBuilding" class="form-horizontal" role="form" id="formEdit">
+                    <form:form commandName="addBuilding" action="buildingEditURL" class="form-horizontal" role="form" id="formEdit">
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="name"> Tên toà nhà </label>
 
@@ -31,7 +32,7 @@
                                 <input type="text" id="name" name="name" value="" class="form-control" />
                             </div>
                         </div>
-                        <%--<div class="form-group">
+                        <div class="form-group">
                             <label class="col-sm-3 control-label"> Người quản lý sản phẩm </label>
                             <div class="col-sm-9">
                                 <form:select path="staffId" class="form-control">
@@ -39,7 +40,7 @@
                                     <form:options items="${staffmaps}"/>
                                 </form:select>
                             </div>
-                        </div>--%>
+                        </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> Quận </label>
                             <div class="col-sm-9">
@@ -208,7 +209,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    <form:checkboxes path="typeArrays" items="${buildingTypes}"/>
+                                    <form:checkboxes path="type" items="${buildingTypes}"/>
                                 </div>
                             </div>
                         </div>

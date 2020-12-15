@@ -6,7 +6,8 @@ import com.laptrinhjavaweb.entity.BuildingEntity;
 import java.util.List;
 
 public interface BuildingRespositoryCustom {
-    List<BuildingEntity> fidnAll(BuildingDTO model);
+    List<BuildingEntity> findAll(BuildingDTO model);
+    List<BuildingEntity> findBuildingJPA(BuildingDTO model);
+    void saveBuilding(BuildingDTO buildingDTO);
 
-    void saveBuilding(BuildingEntity buildingEntity);
 }

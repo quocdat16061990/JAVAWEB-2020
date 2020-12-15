@@ -15,8 +15,7 @@ public class BuildingController {
 
     @Autowired
     private BuildingService buildingService;
-    @Autowired
-    private IUserService userService;
+
 
     @RequestMapping(value = "/admin/building-list", method = RequestMethod.GET)
     public ModelAndView buildingList(@ModelAttribute("modelSearch") BuildingDTO buildingDTO) {
@@ -26,7 +25,7 @@ public class BuildingController {
        mav.addObject("districts",buildingService.getDistricts());
 //       mav.addObject("buildingSearch",buildingService.searchBuilding(searchBuildingDTO));
        mav.addObject("buildingTypes",buildingService.getBuildingTypes());
-        mav.addObject("buildingSearch",buildingService.searchBuilding(buildingDTO));
+        mav.addObject("buildingSearchCustom",buildingService.findBuildingJPA(buildingDTO));
 
 
 
@@ -37,18 +36,12 @@ public class BuildingController {
     public ModelAndView buildingEdit(@ModelAttribute("addBuilding")BuildingDTO buildingDTO) {
         ModelAndView mav = new ModelAndView("admin/building/edit");
 
-        mav.addObject("district",buildingService.getDistricts());
+        mav.addObject("districts",buildingService.getDistricts());
         mav.addObject("buildingTypes",buildingService.getBuildingTypes());
+
 
         return mav;
     }
-    @RequestMapping(value = "/admin/building-update", method = RequestMethod.GET)
-    public ModelAndView buildingUpdate(@ModelAttribute("updateBuilding")BuildingDTO buildingDTO) {
-        ModelAndView mav = new ModelAndView("admin/building/update");
-        mav.addObject("updateBuilding",buildingDTO);
-        mav.addObject("district",buildingService.getDistricts());
-        mav.addObject("buildingTypes",buildingService.getBuildingTypes());
-        mav.addObject("editBuilding",buildingService.editBuilding(buildingDTO));
-        return mav;
+
     }
-}
+

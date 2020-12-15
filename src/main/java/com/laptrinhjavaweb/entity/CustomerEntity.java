@@ -11,24 +11,25 @@ public class CustomerEntity extends BaseEntity {
     private static final long serialVersionUID = -4907767318320601464L;
 
     @Column
-    private String fullName;
+    private String full_Name;
 
     @Column(unique = true)
     private String email;
 
+    public String getFull_Name() {
+        return full_Name;
+    }
+
+    public void setFull_Name(String full_Name) {
+        this.full_Name = full_Name;
+    }
+
     @Column(unique = true)
     private String phone;
 
-    @Column
-    private boolean enable;
 
-    public String getFullName() {
-        return fullName;
-    }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
+
 
     public String getEmail() {
         return email;
@@ -42,13 +43,7 @@ public class CustomerEntity extends BaseEntity {
         return serialVersionUID;
     }
 
-    public boolean isEnable() {
-        return enable;
-    }
 
-    public void setEnable(boolean enable) {
-        this.enable = enable;
-    }
 
     public String getPhone() {
         return phone;
