@@ -52,6 +52,14 @@
                         <i class="menu-icon fa fa-caret-right"></i>
                         Cập nhật toà nhà
                     </a>
+                    <a href="<c:url value='/admin/customer-list'/>">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh Sách Khách Hàng
+                    </a>
+                    <a href="<c:url value='/admin/customer-edit'/>">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Cập nhật khách hàng
+                    </a>
                     <b class="arrow"></b>
                 </li>
             </ul>

@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
-Implementation-Version: 1.0
-Built-By: quocd
-Implementation-Vendor-Id: com.laptrinhjavaweb
 Created-By: IntelliJ IDEA
+Built-By: Quoc Bao
 Build-Jdk: 1.8.0_191
+Implementation-Version: 1.0
+Implementation-Vendor-Id: com.laptrinhjavaweb
 Main-Class: ${start-class}
 

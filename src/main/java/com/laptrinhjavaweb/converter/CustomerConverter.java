@@ -24,4 +24,12 @@ public class CustomerConverter {
         CustomerEntity result = modelMapper.map(dto, CustomerEntity.class);
         return result;
     }
+    public CustomerEntity convertAddCustomer(CustomerDTO dto) {
+        CustomerEntity result = new CustomerEntity();
+        result.setFullName(dto.getFullName());
+        result.setPhone(dto.getPhone());
+        result.setEmail(dto.getEmail());
+
+        return result;
+    }
 }

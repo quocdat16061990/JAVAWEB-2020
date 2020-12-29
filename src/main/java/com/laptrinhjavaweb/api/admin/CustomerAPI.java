@@ -16,7 +16,7 @@ public class CustomerAPI {
 
     @PostMapping("/api/customer")
     public CustomerDTO createCustomer(@RequestBody CustomerDTO newCustomer){
-        customerService.saveByPersists(newCustomer);
+
         return newCustomer;
     }
 

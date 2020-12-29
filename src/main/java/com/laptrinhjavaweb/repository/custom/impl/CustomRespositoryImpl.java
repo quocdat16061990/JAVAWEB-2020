@@ -26,22 +26,35 @@ public class CustomRespositoryImpl implements CustomerRespositoryCustom {
 
     @Override
     public List<CustomerEntity> findByFullNameAndPhoneAndEmail(CustomerDTO model) {
-        String sql="select * from customer";
-        Query query=entityManager.createNativeQuery(sql, CustomerEntity.class);
+        StringBuilder sql=new StringBuilder();
+        sql.append("select * from customer as cus");
+        if(model.getStaffId()!=null){
+            sql.append("left join assigmentcustomer as ac on cus.id = ac.customerid");
+        }
+
+        if(model.getFullName()!=null && model.getFullName()!=""){
+            sql.append("cus.fullname like '%" +model.getFullName()+"%'");
+        }
+        if(model.getPhone() != null && model.getPhone()!=""){
+            sql.append(" and cus.phone like '%" + model.getPhone() + "%'");
+        }
+        if(model.getEmail() != null && model.getEmail()!=""){
+            sql.append(" and cus.email like '%" + model.getEmail() + "%'");
+        }
+
+        Query query=entityManager.createNativeQuery(sql.toString(), CustomerEntity.class);
         return query.getResultList();
 
 
     }
 
-
-
     @Override
-    @Transactional
-    public void saveCustomer(CustomerDTO customerDTO) {
-
-        CustomerEntity customerEntity = customerConverter.convertToEntity(customerDTO);
-
+    public Object addCustomerJPA(CustomerEntity customerEntity) {
         entityManager.persist(customerEntity);
-
+        return null;
     }
+
+
+
+
 }

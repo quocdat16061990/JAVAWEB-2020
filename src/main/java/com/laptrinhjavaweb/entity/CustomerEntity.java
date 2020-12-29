@@ -10,18 +10,18 @@ public class CustomerEntity extends BaseEntity {
 
     private static final long serialVersionUID = -4907767318320601464L;
 
-    @Column
-    private String full_Name;
+    @Column (name="fullname")
+    private String fullName;
 
     @Column(unique = true)
     private String email;
 
-    public String getFull_Name() {
-        return full_Name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFull_Name(String full_Name) {
-        this.full_Name = full_Name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     @Column(unique = true)

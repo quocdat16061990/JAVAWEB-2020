@@ -10,6 +10,7 @@ import com.laptrinhjavaweb.repository.custom.CustomerRespositoryCustom;
 import com.laptrinhjavaweb.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,6 +28,8 @@ public class CustomerService implements ICustomerService {
     CustomerRespositoryCustom customerRespositoryCustom;
     @PersistenceContext
     private EntityManager entityManager;
+
+
     @Override
     public List<CustomerDTO> findByNameAndPhoneAndEmail(CustomerDTO model) {
         List<CustomerDTO> results=new ArrayList<>();
@@ -39,12 +42,14 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Long saveNewCustomer(CustomerDTO customerDTO) {
-        return null;
+    @Transactional
+    public Object addCustomerJPA(CustomerDTO customerDTO) {
+        CustomerEntity customerEntity = customerConverter.convertAddCustomer(customerDTO);
+        return customerRespositoryCustom.addCustomerJPA(customerEntity);
     }
 
-    @Override
-    public void saveByPersists(CustomerDTO customerDTO) {
-        customerRespositoryCustom.saveCustomer(customerDTO);
-    }
+
+
+
+
 }

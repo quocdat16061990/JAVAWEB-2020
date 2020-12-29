@@ -35,6 +35,7 @@ public class CustomerController {
     public ModelAndView customerEdit(@ModelAttribute("modelEdit") CustomerDTO customerDTO) {
         ModelAndView mav = new ModelAndView("admin/customer/edit");
         mav.addObject("modelEdit", customerDTO);
+        mav.addObject("addCustomer", customerService.addCustomerJPA(customerDTO));
         return mav;
     }
 }

@@ -2,7 +2,7 @@ package com.laptrinhjavaweb.dto;
 
 public class CustomerDTO {
 
-    private String full_Name;
+    private String fullName;
     private String phone;
     private String email;
     private Integer staffId;
@@ -10,11 +10,11 @@ public class CustomerDTO {
 
 
     public String getFullName() {
-        return full_Name;
+        return fullName;
     }
 
     public void setFullName(String fullName) {
-        this.full_Name = full_Name;
+        this.fullName = fullName;
     }
 
     public String getPhone() {

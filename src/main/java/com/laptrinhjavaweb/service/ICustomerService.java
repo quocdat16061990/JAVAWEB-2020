@@ -1,11 +1,11 @@
 package com.laptrinhjavaweb.service;
 
 import com.laptrinhjavaweb.dto.CustomerDTO;
+import com.laptrinhjavaweb.entity.CustomerEntity;
 
 import java.util.List;
 
 public interface ICustomerService {
     List<CustomerDTO> findByNameAndPhoneAndEmail(CustomerDTO model);
-    Long saveNewCustomer(CustomerDTO customerDTO);
-    void saveByPersists(CustomerDTO customerDTO);
+    Object addCustomerJPA(CustomerDTO customerDTO);
 }

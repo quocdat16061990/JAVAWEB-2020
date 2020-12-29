@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface CustomerRespositoryCustom {
     List<CustomerEntity> findByFullNameAndPhoneAndEmail(CustomerDTO model);
-    void saveCustomer(CustomerDTO customerDTO);
+
+
+    Object addCustomerJPA(CustomerEntity customerEntity);
 }
