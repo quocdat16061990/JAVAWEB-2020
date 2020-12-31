@@ -43,13 +43,10 @@ public class CustomerService implements ICustomerService {
 
     @Override
     @Transactional
-    public Object addCustomerJPA(CustomerDTO customerDTO) {
-        CustomerEntity customerEntity = customerConverter.convertAddCustomer(customerDTO);
-        return customerRespositoryCustom.addCustomerJPA(customerEntity);
+    public void saveCustomer(CustomerDTO customerDTO) {
+        CustomerEntity customerEntity = customerConverter.convertToEntity(customerDTO);
+        iCustomerRespository.save(customerEntity);
     }
-
-
-
 
 
 }

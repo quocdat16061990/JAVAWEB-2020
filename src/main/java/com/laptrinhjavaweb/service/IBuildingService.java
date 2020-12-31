@@ -10,7 +10,7 @@ public interface IBuildingService {
         void save(BuildingDTO buildingDTO);
         void saveJPA(BuildingDTO buildingDTO);
         Map<String, String> getDistricts();
-
+        void addBuildingSpringDataJPA(BuildingDTO buildingDTO);
         Map<String, String> getBuildingTypes();
 
         List<BuildingDTO> findBuildingJPA(BuildingDTO model);

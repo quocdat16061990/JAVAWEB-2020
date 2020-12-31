@@ -2,9 +2,11 @@ package com.laptrinhjavaweb.repository.custom.impl;
 
 import com.laptrinhjavaweb.converter.BuildingConverter;
 import com.laptrinhjavaweb.converter.CustomerConverter;
+import com.laptrinhjavaweb.dto.BuildingDTO;
 import com.laptrinhjavaweb.dto.CustomerDTO;
 import com.laptrinhjavaweb.entity.BuildingEntity;
 import com.laptrinhjavaweb.entity.CustomerEntity;
+import com.laptrinhjavaweb.entity.RentAreaEntity;
 import com.laptrinhjavaweb.repository.custom.CustomerRespositoryCustom;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Repository
@@ -48,13 +52,9 @@ public class CustomRespositoryImpl implements CustomerRespositoryCustom {
 
     }
 
-    @Override
-    public Object addCustomerJPA(CustomerEntity customerEntity) {
-        entityManager.persist(customerEntity);
-        return null;
+
+
+
+
+
     }
-
-
-
-
-}

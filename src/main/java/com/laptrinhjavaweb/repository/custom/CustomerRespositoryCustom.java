@@ -8,6 +8,4 @@ import java.util.List;
 public interface CustomerRespositoryCustom {
     List<CustomerEntity> findByFullNameAndPhoneAndEmail(CustomerDTO model);
 
-
-    Object addCustomerJPA(CustomerEntity customerEntity);
 }

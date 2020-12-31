@@ -83,6 +83,13 @@ public class BuildingService implements IBuildingService {
     }
 
     @Override
+    public void addBuildingSpringDataJPA(BuildingDTO buildingDTO) {
+        BuildingEntity buildingEntity=buildingConverter.convertToEntity(buildingDTO);
+        buildingRepository.save(buildingEntity);
+    }
+
+
+    @Override
     public Map<String, String> getBuildingTypes() {
         Map<String, String> results = new HashMap<>();
         for (buildingTypes item : buildingTypes.values()) {
@@ -104,6 +111,7 @@ public class BuildingService implements IBuildingService {
 
     @Override
     public void saveByPersist(BuildingDTO buildingDTO) {
-        buildingRespositoryCustom.saveBuilding(buildingDTO);
+        buildingRespositoryCustom.saveBuilding(buildingDTO);}
     }
-}
+
+

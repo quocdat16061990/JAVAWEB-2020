@@ -7,6 +7,6 @@ import java.util.List;
 public interface IBuildingJDBC {
     List<BuildingDTO> search(BuildingDTO searchBuildingDTO);
     void addBuilding(BuildingDTO buildingDTO);
-
+    Object addrentArea(BuildingDTO buildingDTO);
     List<BuildingDTO>  editBuilding(BuildingDTO buildingDTO);
 }
