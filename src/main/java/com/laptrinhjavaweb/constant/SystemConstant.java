@@ -1,6 +1,6 @@
 package com.laptrinhjavaweb.constant;
 
-public class SystemConstant {
+public class SystemConstant<can> {
     /*Spring security 4: ROLE_ADMIN, Spring security 3 not required*/
     public static final String ADMIN_ROLE = "ROLE_MANAGER";
     /*Spring security 4: ROLE_ADMIN, Spring security 3 not required*/

@@ -3,9 +3,6 @@ package com.laptrinhjavaweb.service.impl;
 import com.laptrinhjavaweb.dto.MyUserDetail;
 import com.laptrinhjavaweb.dto.RoleDTO;
 import com.laptrinhjavaweb.dto.UserDTO;
-import com.laptrinhjavaweb.entity.RoleEntity;
-import com.laptrinhjavaweb.entity.UserEntity;
-import com.laptrinhjavaweb.repository.UserRepository;
 import com.laptrinhjavaweb.service.IUserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +22,10 @@ public class CustomUserDetailService implements UserDetailsService {
     @Autowired
     private IUserService userService;
 
-
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
         UserDTO userDTO = userService.findOneByUserNameAndStatus(name, 1);
-        if (userService == null) {
+        if (userDTO == null) {
             throw new UsernameNotFoundException("Username not found");
         }
         List<GrantedAuthority> authorities = new ArrayList<>();
@@ -37,7 +33,7 @@ public class CustomUserDetailService implements UserDetailsService {
             authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getCode()));
         }
         MyUserDetail myUserDetail = new MyUserDetail(name, userDTO.getPassword(), true, true, true, true, authorities);
-        BeanUtils.copyProperties(userDTO,myUserDetail);
+        BeanUtils.copyProperties(userDTO, myUserDetail);
         return myUserDetail;
     }
 }

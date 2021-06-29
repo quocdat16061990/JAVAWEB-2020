@@ -1,16 +1,9 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="/common/taglib.jsp"%>
-<c:url var="customerAPI" value="/api/customer" />
+<%@include file="/common/taglib.jsp" %>
 <c:url var="customerEditURL" value="/admin/customer-edit"/>
 <html>
 <head>
-    <title>Chỉnh sửa khách hàng</title>
-    <script>
-        $(document).ready(function () {
-
-        });
-    </script>
+    <title>Cập nhật khách hàng</title>
 </head>
 <body>
 <div class="main-content">
@@ -22,166 +15,287 @@
                 } catch (e) {
                 }
             </script>
-
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
                     <a href="#">Home</a>
                 </li>
-                <li class="active">Dashboard</li>
+                <li class="active">Danh Sách Khách Hàng</li>
             </ul>
         </div>
-
         <div class="page-content">
             <div class="row">
                 <div class="col-xs-12">
-                    <form:form commandName="addCustomer" action="${customerEditURL}" id="editForm" method="POST">
-                        <div class="form-group col-md-9">
-                            <label class="col-sm-3 control-label no-padding-right" for="fullName">Họ tên khách hàng:
-                            </label>
-
-                            <div class="col-sm-9">
-                                <input class="form-control" type="text" id="fullName" name="fullName"/>
+                    <div class="widget-box">
+                        <div class="widget-header">
+                            <h4 class="widget-title">Cập nhật khách hàng</h4>
+                            <div class="widget-toolbar">
+                                <a href="#" data-action="collapse">
+                                    <i class="ace-icon fa fa-chevron-up"></i>
+                                </a>
                             </div>
                         </div>
-
-                        <div class="form-group col-md-9">
-                            <label class="col-sm-3 control-label no-padding-right" for="phone">Số điện thoại:
-                            </label>
-
-                            <div class="col-sm-9">
-                                <input class="form-control" type="number" id="phone" name="phone"/>
-                            </div>
+                        <div class="widget-body">
+                            <form:form action="${customerEditURL}" commandName="customerEdit" id="formEditCustomer">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="fullName">Họ tên khách hàng:</label>
+                                                <input type="text" class="form-control" name="fullName" id="fullName">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="phone">Số điện thoại:</label>
+                                                <input type="number" class="form-control" name="phone" id="phone">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="email">Email: </label>
+                                                <input type="email" class="form-control" name="email" id="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="company">Tên công ty:</label>
+                                                <input type="text" class="form-control" name="company" id="company">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="request">Yêu cầu:</label>
+                                                <input type="text" class="form-control" name="request" id="request">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="note">Ghi chú:</label>
+                                                <textarea class="form-control" rows="5" name="note"
+                                                          id="note"></textarea>
+                                            </div>
+                                        </div>
+                                        <form:input path="id" id="customerId" type="hidden"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="col-xs-12 col-sm-12">
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-success" id="btnAddNewCustomer">Cập
+                                                    nhật khách hàng
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form:form>
                         </div>
-
-                        <div class="form-group col-md-9">
-                            <label class="col-sm-3 control-label no-padding-right" for="email">Email:
-                            </label>
-
-                            <div class="col-sm-9">
-                                <input class="form-control" type="email" id="email" name="email"/>
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-9">
-                            <label class="col-sm-3 control-label no-padding-right" for="createdDate">Ngày tạo:
-                            </label>
-
-                            <div class="col-sm-9">
-                                <input class="form-control" type="date" id="createdDate" name="createdDate"/>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group col-md-9">
-                            <label class="col-sm-3 control-label no-padding-right" for="modifiedDate">Ngày chỉnh sửa:
-                            </label>
-
-                            <div class="col-sm-9">
-                                <input class="form-control" type="date" id="modifiedDate" name="modifiedDate"/>
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-9">
-                            <label class="col-sm-3 control-label no-padding-right" for="createdBy">Người tạo:
-                            </label>
-
-                            <div class="col-sm-9">
-                                <input class="form-control" type="text" id="createdBy" name="createdBy"/>
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-9">
-                            <label class="col-sm-3 control-label no-padding-right" for="modifiedBy"> Người chỉnh sửa:
-                            </label>
-
-                            <div class="col-sm-9">
-                                <input class="form-control" type="text" id="modifiedBy" name="modifiedBy"/>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-9">
-                                <button type="button" class="btn btn-primary" id="btnAddCustomer">Thêm khách hàng
-                                </button>
-                                <button type="button" class="btn btn-primary" id="">Huỷ</button>
-                            </div>
-                        </div>
-                    </form:form>
+                    </div>
                 </div>
             </div>
+
+            <c:if test="${not empty customerEdit.id}">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="widget-box">
+                            <div class="widget-header">
+                                <h4 class="widget-title">Thêm giao dịch</h4>
+                                <div class="widget-toolbar">
+                                    <a href="#" data-action="collapse">
+                                        <i class="ace-icon fa fa-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <form id="formAddTransaction">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="code">Mã giao dịch:</label>
+                                                    <input type="text" class="form-control" name="codeTransaction"
+                                                           id="code">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="note">Ghi chú:</label>
+                                                    <input type="number" class="form-control" id="noteTransaction"
+                                                           name="note">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="col-xs-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <button type="button" class="btn btn-success"
+                                                            id="btnAddNewTransaction">
+                                                        Thêm mới giao dịch
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <c:if test="${not empty transactions}">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="widget-box">
+                                <div class="widget-header">
+                                    <h4 class="widget-title">Cập nhật giao dịch</h4>
+                                    <div class="widget-toolbar">
+                                        <a href="#" data-action="collapse">
+                                            <i class="ace-icon fa fa-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="widget-body">
+                                    <c:forEach var="item1" items="${transactions}">
+                                        <div><h5>${item.code}</h5></div>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Ngày tạo</th>
+                                                <th>Ghi chú</th>
+                                            </tr>
+                                            </thead>
+                                            <c:forEach var="item2" items="${transactions}">
+                                                <c:if test="${item1.code == item2.code}">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>${item2.createdDate}</td>
+                                                        <td>${item2.note}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </c:if>
+                                            </c:forEach>
+                                        </table>
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+            </c:if>
         </div>
     </div>
 </div>
 
-<!-- Modal -->
-<div id="assignmentBuildingModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Danh sách nhân viên</h4>
-            </div>
-            <div class="modal-body">
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th>Chọn nhân viên</th>
-                        <th>Tên nhân viên</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><input type="checkbox" value="2" id="checkbox_2"></td>
-                        <td>Nguyễn Văn B</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" value="3" id="checkbox_3"></td>
-                        <td>Nguyễn Văn C</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" value="4" id="checkbox_4"></td>
-                        <td>Nguyễn Văn D</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" id="btnAssignCustomer">Giao khách hàng</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<!-- basic scripts -->
 <script>
-    $('#btnAddCustomer').click(function (e) {
-        e.preventDefault();
-        var data = {};
-        var formData = $('#formEdit').serializeArray();
-        $.each(formData, function (index, v) {
-            data[""+v.name+""] = v.value;
-        });
+    $(document).ready(function () {
+        findCustomerById();
+    })
+
+    function findCustomerById() {
+        var customerId = $('#customerId').val();
+
         $.ajax({
-            type:'POST',
-            url:'${customerAPI}',
-            contentType: 'application/json',
-            data: JSON.stringify(data),
-            dataType: 'json',
-            success: function (response) {
-                console.log('success');
+            method: "GET",
+            url: 'http://localhost:8080/api/customer/' + customerId,
+            success: function (res) {
+                console.log("success");
+                $('#fullName').val(res.data.fullName);
+                $('#phone').val(res.data.phone);
+                $('#email').val(res.data.email);
+                $('#company').val(res.data.company);
+                $('#request').val(res.data.request);
+                $('#note').val(res.data.note);
             },
-            error:function (response) {
-                console.log('failed');
-                console.log(response);
+            fail: function (res) {
+                console.log("fail");
+                console.log(res);
             }
         });
-        $('#formEdit').submit();
+    };
+
+    $("#btnAddNewCustomer").click(function (e) {
+        e.preventDefault();
+        var id = $("#customerId").val();
+        var data = {};
+        var formData = $('#formEditCustomer').serializeArray();
+        $.each(formData, function (index, value) {
+            data["" + value.name + ""] = value.value;
+        })
+        data["id"] = id;
+        if (id == "") {
+            addNewCustomer(data);
+        } else {
+            editCustomer(data);
+        }
     });
+
+    function addNewCustomer(data) {
+        $.ajax({
+            method: "POST",
+            url: 'http://localhost:8080/api/customer',
+            data: JSON.stringify(data),
+            datatype: "json",
+            contentType: "application/json",
+            success: function (res) {
+                console.log("success");
+                location.reload();
+            },
+            error: function (res) {
+                console.log("error");
+                console.log(res);
+            }
+        })
+    }
+
+    function editCustomer(data) {
+        $.ajax({
+            method: "PUT",
+            url: 'http://localhost:8080/api/customer',
+            data: JSON.stringify(data),
+            datatype: "json",
+            contentType: "application/json",
+            success: function (res) {
+                console.log("success");
+                location.reload();
+            },
+            error: function (res) {
+                console.log("error");
+                console.log(res);
+            }
+        })
+    }
+
+    $('btnAddNewTransaction').click(function (e) {
+        var data = {};
+        var customerId = $("#customerId").val();
+        var formData = $('#formEditCustomer').serializeArray();
+        $.each(formData, function (index, value) {
+            data["" + value.name + ""] = value.value;
+        })
+        data["customerId"] = customerId;
+        createTransaction(data);
+    })
+
+    function createTransaction(data) {
+        $.ajax({
+            method: "POST",
+            url: 'http://localhost:8080/api/transaction',
+            data: JSON.stringify(data),
+            datatype: "json",
+            contentType: "application/json",
+            success: function (res) {
+                console.log("sucess");
+                console.log(res);
+            },
+            fail: function (res) {
+                console.log("fail");
+                console.log(res);
+            }
+        })
+    }
 </script>
 </body>
 </html>
