@@ -1,19 +1,21 @@
 package com.laptrinhjavaweb.service;
 
 import com.laptrinhjavaweb.dto.BuildingDTO;
+import com.laptrinhjavaweb.dto.request.AssignmentBuildingRequestDTO;
+import com.laptrinhjavaweb.dto.response.StaffResponseDTO;
 
 import java.util.List;
 import java.util.Map;
 
 public interface IBuildingService {
-        List<BuildingDTO> findAll(BuildingDTO model);
-        void save(BuildingDTO buildingDTO);
-        void saveJPA(BuildingDTO buildingDTO);
-        Map<String, String> getDistricts();
-        void addBuildingSpringDataJPA(BuildingDTO buildingDTO);
-        Map<String, String> getBuildingTypes();
-
-        List<BuildingDTO> findBuildingJPA(BuildingDTO model);
-        void saveByPersist(BuildingDTO buildingDTO);
+    Map<String, String> getDistrictCode();
+    Map<String, String> getType();
+    List<BuildingDTO> findAll();
+    BuildingDTO save(BuildingDTO buildingDTO);
+    BuildingDTO update(BuildingDTO updateBuilding);
+    List<BuildingDTO> findBuildingList(BuildingDTO model);
+    void delete(Long[] ids);
+    BuildingDTO findBuildingID(Long id);
+    List<StaffResponseDTO> loadStaff(Long id);
+    BuildingDTO assignmentBuilding(AssignmentBuildingRequestDTO requestDTO);
 }
-

@@ -1,8 +1,6 @@
 package com.laptrinhjavaweb.dto;
 
-import java.util.List;
-
-public class BuildingDTO {
+public class BuildingDTO extends BaseDTO {
 
     private String name;
     private String ward;
@@ -19,15 +17,6 @@ public class BuildingDTO {
     private Integer rentCostTo;
     private Integer rentCostFrom;
     private Integer rentCost;
-
-    public Integer getRentCost() {
-        return rentCost;
-    }
-
-    public void setRentCost(Integer rentCost) {
-        this.rentCost = rentCost;
-    }
-
     private String costDescription;
     private String serviceCost;
     private String carCost;
@@ -39,10 +28,14 @@ public class BuildingDTO {
     private String payment;
     private String timeRent;
     private String timeDecorator;
-    private String[] type = new String[]{};
+    private String[] buildingTypes = new String[] {};
     private String managerName ;
     private String managerPhone ;
     private Integer staffId;
+    private String address;
+    private String type;
+    private String rentArea;
+    private String note;
 
     public String getName() {
         return name;
@@ -156,6 +149,14 @@ public class BuildingDTO {
         this.rentCostFrom = rentCostFrom;
     }
 
+    public Integer getRentCost() {
+        return rentCost;
+    }
+
+    public void setRentCost(Integer rentCost) {
+        this.rentCost = rentCost;
+    }
+
     public String getCostDescription() {
         return costDescription;
     }
@@ -244,12 +245,12 @@ public class BuildingDTO {
         this.timeDecorator = timeDecorator;
     }
 
-    public String[] getType() {
-        return type;
+    public String[] getBuildingTypes() {
+        return buildingTypes;
     }
 
-    public void setType(String[] type) {
-        this.type = type;
+    public void setBuildingTypes(String[] buildingTypes) {
+        this.buildingTypes = buildingTypes;
     }
 
     public String getManagerName() {
@@ -274,5 +275,37 @@ public class BuildingDTO {
 
     public void setStaffId(Integer staffId) {
         this.staffId = staffId;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getRentArea() {
+        return rentArea;
+    }
+
+    public void setRentArea(String rentArea) {
+        this.rentArea = rentArea;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }

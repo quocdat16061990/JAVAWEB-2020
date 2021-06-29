@@ -1,44 +1,49 @@
 package com.laptrinhjavaweb.controller.admin;
 
-
 import com.laptrinhjavaweb.dto.CustomerDTO;
 import com.laptrinhjavaweb.service.ICustomerService;
+import com.laptrinhjavaweb.service.ITransactionService;
 import com.laptrinhjavaweb.service.IUserService;
-import com.laptrinhjavaweb.service.impl.BuildingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller(value = "customerControllerofAdmin")
+@Controller(value = "customerControllerOfAdmin")
 public class CustomerController {
-
-
-
     @Autowired
     private ICustomerService customerService;
 
+    @Autowired
+    private IUserService userService;
+
+    @Autowired
+    private ITransactionService transactionService;
+
     @RequestMapping(value = "/admin/customer-list", method = RequestMethod.GET)
-    public ModelAndView customerList(@ModelAttribute("modelSearch") CustomerDTO customerDTO) {
+    public ModelAndView customerList(@ModelAttribute("customerSearch") CustomerDTO customerDTO) {
         ModelAndView mav = new ModelAndView("admin/customer/list");
-        mav.addObject("modelSearch", customerDTO);
-
-        mav.addObject("searchCustomer", customerService.findByNameAndPhoneAndEmail(customerDTO));
-
-
+        mav.addObject("staffmaps", userService.getStaffMaps());
+        mav.addObject("customerList", customerService.findAll());
 
         return mav;
     }
+
+    @RequestMapping(value = "/admin/customer-list", method = RequestMethod.POST)
+    public ModelAndView customerGetList(@ModelAttribute("customerSearch") CustomerDTO customerDTO) {
+        ModelAndView mav = new ModelAndView("admin/customer/list");
+        mav.addObject("staffmaps", userService.getStaffMaps());
+        mav.addObject("customerList", customerService.findCustomers(customerDTO));
+
+        return mav;
+    }
+
     @RequestMapping(value = "/admin/customer-edit", method = RequestMethod.GET)
-    public ModelAndView customerEdit(@ModelAttribute("modelEdit") CustomerDTO customerDTO) {
+    public ModelAndView customerAddGetList(@ModelAttribute("customerEdit") CustomerDTO customerDTO) {
         ModelAndView mav = new ModelAndView("admin/customer/edit");
-        mav.addObject("modelEdit", customerDTO);
-        mav.addObject("addCustomer", customerService.addCustomerJPA(customerDTO));
+        mav.addObject("customerEdit", customerDTO);
+        mav.addObject("transactions", transactionService.findAllByCustomerId(customerDTO.getId()));
+
         return mav;
     }
 }
-
-
-

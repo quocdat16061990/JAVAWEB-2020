@@ -1,21 +1,19 @@
 package com.laptrinhjavaweb.service.impl;
 
 import com.laptrinhjavaweb.converter.UserConverter;
-import com.laptrinhjavaweb.dto.CustomerDTO;
 import com.laptrinhjavaweb.dto.UserDTO;
+import com.laptrinhjavaweb.entity.UserEntity;
 import com.laptrinhjavaweb.repository.UserRepository;
-import com.laptrinhjavaweb.repository.jdbc.ICustomerJDBC;
-//import com.laptrinhjavaweb.repository.jdbc.impl.CustomerJDBC;
 import com.laptrinhjavaweb.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class UserService implements IUserService {
-
-//    private ICustomerJDBC iCustomerJDBC=new CustomerJDBC();
 
     @Autowired
     private UserRepository userRepository;
@@ -29,16 +27,12 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public List<CustomerDTO> addCustomer(CustomerDTO customerDTO) {
-
-        return null;
+    public Map<Long, String> getStaffMaps() {
+        Map<Long, String> resutl = new HashMap<>();
+        List<UserEntity> staffs = userRepository.findByStatusAndRoles_Code(1, "STAFF");
+        for(UserEntity item: staffs){
+            resutl.put(item.getId(), item.getFullName());
+        }
+        return resutl;
     }
-
-    @Override
-    public List<CustomerDTO> searchCustomer(CustomerDTO customerDTO) {
-
-        return null;
-    }
-
-
 }
